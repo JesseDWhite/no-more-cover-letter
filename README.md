@@ -41,15 +41,35 @@ Jesse White _jesse.white6@gmail.com_
 # Full Project Outlook
 <!-- <details>
   <summary>Click To Find Out Details on Project</summary> -->
-<img src="https://media.giphy.com/media/YWLDUhxMbpPfY831Fn/giphy.gif" width="75px">
-
-<h3>Project Insipration</h3> 
+<h3>Project Insipration <img src="https://media.giphy.com/media/YWLDUhxMbpPfY831Fn/giphy.gif" width="60px"> </h3> 
 
 <p>Applying for jobs and writing cover letters that are tailored for each job posting can become a tedious and repeatable process. Many people that have a cover letter already, know the sections that can be altered to fit the needs of a job posting. The rest of the cover letter can largely be left the same. Having done this myself numerous times made me realize that this process could be automated to some capacity. This is where I got the idea to make an application that could help someone write a custom cover letter with minimal input from the user.</p>
 
 <p>Many job postings can be broken down into key talking points and key words and phrases. These talking points are typically taken from the list of job duties/responsibilities and the general job description. The companies that are receiving the cover letters are usually putting them through a text analyzer for word matches between the job posting and the letter itself. When an applicant breaks the job posting into these key words, it becomes much easier to provide information on themselves per key word and get past the gatekeeper bot.</p>
 
 <p>With this application, I wanted to help make that process easier for both people that have cover letters already and for those that are stuck staring a blank screen and a blinking curser.</p>
+
+<h3>Technical Layout <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="60px">
+</h3>
+<h4><em>Minimum Viable Product (MVP)<em></h4>
+
+* Take the input for key responsibilities/qualifications from the job posting (the user will need to manually put these in from the job posting.)
+* Ask the user whether or not they have experience or can supply talking points to each of the responsibilities/qualifications.
+* Take user input for each area they listed above.
+* Populate two main paragraphs that will contain all talking points that were previously inputted.
+* There will be a generic introductory paragraph and an ending paragraph.
+Display final output to users to copy and edit within their own text editor.
+
+<h4><em>Stretch Goals<em></h4>
+
+* I would like to give the option to customize the introductory paragraph and the end paragraph to each job posting.
+* The end result can be passed through a Grammarly type of program to check for grammar/spelling errors.
+* Previous inputs can be saved for future job applications
+* Final output can be exported to pdf/google doc.
+* Users can select what kind of tone they would like the cover letter to have and change keywords based on their selection.
+* Host the application on a Heroku-type site/Firebase.
+
+
 <!-- </details> -->
 
 # Time Logged For Research
