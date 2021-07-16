@@ -70,6 +70,7 @@ Display final output to users to copy and edit within their own text editor.
 * Users can select what kind of tone they would like the cover letter to have and change keywords based on their selection.
 * Host the application on a Heroku-type site/Firebase.
 * Application can be tailored to any user.
+* Save general user information like name and address for re-use later.
 
 # Time Logged For Research
 <details>
@@ -79,5 +80,6 @@ Display final output to users to copy and edit within their own text editor.
   * 8:00 - 9:00: research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
   * 9:45 - 10:31: writing project overview and inspiration on a word doc to import later into README.
   * 10:45 - 11:30: reading articles on good cover letters and content.
-  * 14:56 - : researching more cover letter examples.
+  * 14:56 - 15:16: researching more cover letter examples.
+  * 15:30 - 16:24: researching how to add Google authentication to gather user info for reusable forms.
 </details>

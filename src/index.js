@@ -9,6 +9,7 @@ import App from './components/App';
 import firebase from './firebase';
 import rootReducer from './reducers/index';
 import * as serviceWorker from './serviceWorker';
+import 'firebase/auth';
 
 const store = createStore(rootReducer);
 
@@ -16,6 +17,7 @@ const rrfProps = {
   firebase,
   config: {
     userProfile: 'users',
+    userFirestoreForProfile: true,
   },
   dispatch: store.dispatch,
   createFirestoreInstance,
