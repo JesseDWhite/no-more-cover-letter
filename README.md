@@ -3,15 +3,16 @@
 
 # _No More Cover Letter_ 
 </div>
+<div align="center">
+<em >This is a capstone project for Epicodus March 2021 cohort.</em>
+<p>By Jesse White</p>
+</div>
 
-#### _This is a capstone project for Epicodus March 2021 cohort._
-#### By _Jesse White_
 ## Technologies Used
 * 📝 _HTML_
 * 🎨 _CSS_
 * ☕ _Javascript_
 * 🧭 _Node_
-* 💾 _Webpack_
 * 🥾 _Bootstrap_
 * ⚛ _React_
 * 🧙‍♂️ _Redux_
@@ -22,18 +23,16 @@ _This application was meant to streamline and de-mistify the process of writing 
 * [Node](https://nodejs.org/en/)
 * A text editor like [VS Code](https://code.visualstudio.com/)
 ## 🏗 Setup/Installation Requirements
-1. Clone the repository: `$ git clone https://github.com/JesseDWhite/wish-you-were-beer`.
-2. Navigate to the `wish-you-were-beer/` directory on your computer.
+1. Clone the repository: `$ git clone https://github.com/JesseDWhite/no-more-cover-letter`.
+2. Navigate to the `no-more-cover-letter/` directory on your computer.
 3. Open with your preferred text editor to view the code base.
 4. To start a development server and view the project in the browser:
-    * _Navigate to `wish-you-were-beer/` in your command line_
+    * _Navigate to `no-more-cover-letter/` in your command line_
     * _Run the command `npm install` to install dependencies_
     * _Optionally, run the command `npm run build` to make a bundle of the files_
     * _Finally, run the command `npm run start` to start a development server_
 ## 🐛 Known Bugs
-* _The background gradient repeats when more than three taps are added._
-* _Number input types do not accept float type entries._
-* _Functionality for selling pints is not yet working._
+* _There are no known bugs._
 ## ⚖ License
 _MIT © 2021 Jesse White_
 ## 🤳 Contact Information
@@ -44,7 +43,7 @@ Jesse White _jesse.white6@gmail.com_
   <summary>Click To Find Out Details on Project Timeline</summary>
 
   ## 7/16/2021
-  * 8:00 - : research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
+  * 8:00 - 9:00: research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
 </details>
 
 # Getting Started with Create React App
