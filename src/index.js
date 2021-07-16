@@ -6,15 +6,18 @@ import { Provider } from 'react-redux';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
 import App from './components/App';
-import reportWebVitals from './reportWebVitals';
 import firebase from './firebase';
 import rootReducer from './reducers/index';
 import CoverLetterControl from './components/CoverLetterControl';
+import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer);
 
 const rrfProps = {
   firebase,
+  config: {
+    userProfile: 'users',
+  },
   dispatch: store.dispatch,
   createFirestoreInstance,
 };
@@ -29,4 +32,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-reportWebVitals();
+serviceWorker.unregister();
