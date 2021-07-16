@@ -58,6 +58,7 @@ Jesse White _jesse.white6@gmail.com_
 * Populate two main paragraphs that will contain all talking points that were previously inputted.
 * There will be a generic introductory paragraph and an ending paragraph.
 Display final output to users to copy and edit within their own text editor.
+* The application will be tailored for my current cover letter and information therein.
 
 <h4><em>Stretch Goals<em></h4>
 
@@ -67,6 +68,7 @@ Display final output to users to copy and edit within their own text editor.
 * Final output can be exported to pdf/google doc.
 * Users can select what kind of tone they would like the cover letter to have and change keywords based on their selection.
 * Host the application on a Heroku-type site/Firebase.
+* Application can be tailored to any user.
 
 # Time Logged For Research
 <details>
