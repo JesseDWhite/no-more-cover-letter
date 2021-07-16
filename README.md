@@ -42,8 +42,9 @@ Jesse White _jesse.white6@gmail.com_
 <details>
   <summary>Click To Find Out Details on Project</summary>
 
-  ## 7/16/2021
-  * 8:00 - 9:00: research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
+<h3>Project Insipration</h3>
+
+<p>Applying for jobs and writing cover letters that are tailored for each job posting can become a tedious and repeatable process. Many people that have a cover letter already, know the sections that can be altered to fit the needs of a job posting. The rest of the cover letter can largely be left the same. Having done this myself numerous times made me realize that this process could be automated to some capacity. This is where I got the idea to make an application that could help someone write a custom cover letter with minimal input from the user.</p>
 </details>
 
 # Time Logged For Research
@@ -52,12 +53,12 @@ Jesse White _jesse.white6@gmail.com_
 
   ## 7/16/2021
   * 8:00 - 9:00: research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
+  * 9:45 - : writing project overview and inspiration on a word doc to import later into README.
 </details>
 
 # Getting Started with Create React App
 <details>
   <summary>Click To Find Out More Info</summary>
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
