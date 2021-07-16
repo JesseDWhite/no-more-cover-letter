@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { withFirestore } from 'react-redux-firebase';
-import { withFirestore } from 'react-redux-firebase';
+import { withFirestore, isLoaded } from 'react-redux-firebase';
 import NewCoverLetterForm from './NewCoverLetterForm';
 import * as a from '../actions/index';
 
@@ -21,14 +20,27 @@ class CoverLetterControl extends React.Component {
   }
 
   render() {
-    const currentlyVisibleState = <NewCoverLetterForm
-      createCoverLetter={this.createCoverLetter}
-    />;
-    return (
-      <>
-        {currentlyVisibleState}
-      </>
-    );
+    const auth = this.props.firebase.auth();
+    if (!isLoaded(auth)) {
+      return (
+        <h1>...loading...</h1>
+      );
+    }
+    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      return (
+        <h1>You must be signed in to see this content.</h1>
+      );
+    }
+    if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      const currentlyVisibleState = <NewCoverLetterForm
+        createCoverLetter={this.createCoverLetter}
+      />;
+      return (
+        <>
+          {currentlyVisibleState}
+        </>
+      );
+    }
   }
 }
 
