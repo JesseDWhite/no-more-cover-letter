@@ -48,7 +48,7 @@ Jesse White _jesse.white6@gmail.com_
 
 <p>With this application, I wanted to help make that process easier for both people that have cover letters already and for those that are stuck staring a blank screen and a blinking curser.</p>
 
-<h3>Technical Layout <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="60px">
+<h3>Technical Layout & Goals<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="60px">
 </h3>
 <h4><em>Minimum Viable Product (MVP)<em></h4>
 
@@ -59,6 +59,7 @@ Jesse White _jesse.white6@gmail.com_
 * There will be a generic introductory paragraph and an ending paragraph.
 Display final output to users to copy and edit within their own text editor.
 * The application will be tailored for my current cover letter and information therein.
+* Potentially making it a succint style cover letter.
 
 <h4><em>Stretch Goals<em></h4>
 
@@ -77,5 +78,6 @@ Display final output to users to copy and edit within their own text editor.
   ## 7/16/2021
   * 8:00 - 9:00: research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
   * 9:45 - 10:31: writing project overview and inspiration on a word doc to import later into README.
-  * 10:45 - : reading articles on good cover letters and content.
+  * 10:45 - 11:30: reading articles on good cover letters and content.
+  * 14:56 - : researching more cover letter examples.
 </details>

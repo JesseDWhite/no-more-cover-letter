@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useFirestore } from 'react-redux-firebase';
 
@@ -7,13 +8,13 @@ function NewCoverLetterForm(props) {
   function addCoverLetterToFirestore(e) {
     e.preventDefault();
 
-    const { test } = e.target;
+    const { yourName } = e.target;
 
     props.createCoverLetter();
 
     return firestore.collection('cover-letters').add(
       {
-        test: test.value,
+        yourName: yourName.value,
         timeAdded: firestore.FieldValue.serverTimestamp(),
       }
     );
@@ -21,9 +22,10 @@ function NewCoverLetterForm(props) {
   return (
     <>
       <form onSubmit={addCoverLetterToFirestore}>
+        <label htmlFor='yourName'>Your Name</label>
         <input
           type='text'
-          name='test'
+          name='yourName'
         />
         <button type='submit'>Submit</button>
       </form>
