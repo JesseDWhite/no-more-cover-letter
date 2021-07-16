@@ -9,6 +9,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import firebase from './firebase';
 import rootReducer from './reducers/index';
+import CoverLetterControl from './components/CoverLetterControl';
 
 const store = createStore(rootReducer);
 
@@ -22,6 +23,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <App />
+      <CoverLetterControl />
     </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')
