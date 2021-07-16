@@ -17,7 +17,7 @@
 * 🧙‍♂️ _Redux_
 * 🔥 _Firebase_
 ## 📜 Description
-_This application will allow the user to add kegs to their tap list for customers to buy. Each time a customer buys a pint, the total amount of pints remaining will decrease._
+_This application was meant to streamline and de-mistify the process of writing a cover letter for a job appliaciton. See below for full project overview._
 ### 💻 Prerequisites
 * [Node](https://nodejs.org/en/)
 * A text editor like [VS Code](https://code.visualstudio.com/)
