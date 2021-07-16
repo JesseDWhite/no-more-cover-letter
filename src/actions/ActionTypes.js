@@ -1,1 +1,2 @@
 export const DELETE_COVER_LETTER = 'DELETE_COVER_LETTER';
+export const TOGGLE_FORM = 'TOGGLE_FORM';
