@@ -75,4 +75,5 @@ Display final output to users to copy and edit within their own text editor.
   ## 7/16/2021
   * 8:00 - 9:00: research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
   * 9:45 - 10:31: writing project overview and inspiration on a word doc to import later into README.
+  * 10:45 - : reading articles on good cover letters and content.
 </details>
