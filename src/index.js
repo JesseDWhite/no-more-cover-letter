@@ -8,7 +8,6 @@ import { createFirestoreInstance } from 'redux-firestore';
 import App from './components/App';
 import firebase from './firebase';
 import rootReducer from './reducers/index';
-import CoverLetterControl from './components/CoverLetterControl';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer);
@@ -26,7 +25,6 @@ ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <App />
-      <CoverLetterControl />
     </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')
