@@ -4,8 +4,8 @@
 # _No More Cover Letter_ 
 </div>
 <div align="center">
-<em >This is a capstone project for Epicodus March 2021 cohort.</em>
-<p>By Jesse White</p>
+<h3><em >This is a capstone project for Epicodus March 2021 cohort.</em></h3>
+<h4><p>By Jesse White</p></h4>
 </div>
 
 ## Technologies Used
@@ -37,6 +37,14 @@ _This application was meant to streamline and de-mistify the process of writing 
 _MIT © 2021 Jesse White_
 ## 🤳 Contact Information
 Jesse White _jesse.white6@gmail.com_
+
+# Full Project Outlook
+<details>
+  <summary>Click To Find Out Details on Project</summary>
+
+  ## 7/16/2021
+  * 8:00 - 9:00: research on text anylizers to evaluate job postings for key words. Currently looking into Microsoft Azure.
+</details>
 
 # Time Logged For Research
 <details>
