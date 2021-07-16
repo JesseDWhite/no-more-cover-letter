@@ -39,7 +39,7 @@ _MIT © 2021 Jesse White_
 Jesse White _jesse.white6@gmail.com_
 
 # Full Project Outlook
-
+<em>✔✅ for goals that have been met so far.</em>
 <h3>Project Insipration <img src="https://media.giphy.com/media/QxSRmUeq7RUIHLxADc/giphy.gif" width="60px"> </h3> 
 
 <p>Applying for jobs and writing cover letters that are tailored for each job posting can become a tedious and repeatable process. Many people that have a cover letter already, know the sections that can be altered to fit the needs of a job posting. The rest of the cover letter can largely be left the same. Having done this myself numerous times made me realize that this process could be automated to some capacity. This is where I got the idea to make an application that could help someone write a custom cover letter with minimal input from the user.</p>
