@@ -72,6 +72,7 @@ Display final output to users to copy and edit within their own text editor.
 * Host the application on a Heroku-type site/Firebase.
 * Application can be tailored to any user.
 * Save general user information like name and address for re-use later.
+* Create a job tracking dashboard for jobs user is actively applying for.
 
 # Time Logged For Research
 <details>
