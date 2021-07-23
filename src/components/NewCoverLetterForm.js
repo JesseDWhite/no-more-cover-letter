@@ -33,7 +33,6 @@ function NewCoverLetterForm(props) {
           type='text'
           name='companyName'
         />
-        <label htmlFor='timeAdded'>{firestore.FieldValue.serverTimestamp()}</label>
         <button type='submit'>Submit</button>
       </form>
     </>
