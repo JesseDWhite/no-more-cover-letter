@@ -8,7 +8,12 @@ function NewCoverLetterForm(props) {
   function addCoverLetterToFirestore(e) {
     e.preventDefault();
 
-    const { yourName, companyName } = e.target;
+    const { yourName,
+      companyName,
+      introParagraph,
+      bodyParagraphOne,
+      bodyParagraphTwo,
+      conclusion } = e.target;
 
     props.createCoverLetter();
 
@@ -17,6 +22,10 @@ function NewCoverLetterForm(props) {
         yourName: yourName.value,
         companyName: companyName.value,
         timeAdded: firestore.FieldValue.serverTimestamp(),
+        introParagraph: introParagraph.value,
+        bodyParagraphOne: bodyParagraphOne.value,
+        bodyParagraphTwo: bodyParagraphTwo.value,
+        conclusion: conclusion.value,
       }
     );
   }
@@ -32,6 +41,26 @@ function NewCoverLetterForm(props) {
         <input
           type='text'
           name='companyName'
+        />
+        <label htmlFor='introParagraph'>Introductory Paragraph</label>
+        <textarea
+          type='text'
+          name='introParagraph'
+        />
+        <label htmlFor='bodyParagraphOne'>First Body Paragraph</label>
+        <textarea
+          type='text'
+          name='bodyParagraphOne'
+        />
+        <label htmlFor='bodyParagraphTwo'>Second Body Paragraph</label>
+        <textarea
+          type='text'
+          name='bodyParagraphTwo'
+        />
+        <label htmlFor='conclusion'>Conclusion</label>
+        <textarea
+          type='text'
+          name='conclusion'
         />
         <button type='submit'>Submit</button>
       </form>

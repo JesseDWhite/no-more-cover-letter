@@ -33,6 +33,10 @@ class CoverLetterControl extends React.Component {
       const firestoreCoverLetter = {
         yourName: coverLetter.get('yourName'),
         companyName: coverLetter.get('companyName'),
+        introParagraph: coverLetter.get('introParagraph'),
+        bodyParagraphOne: coverLetter.get('bodyParagraphOne'),
+        bodyParagraphTwo: coverLetter.get('bodyParagraphTwo'),
+        conclusion: coverLetter.get('conclusion'),
         id: coverLetter.id,
       };
       this.setState({ selectedCoverLetter: firestoreCoverLetter });
