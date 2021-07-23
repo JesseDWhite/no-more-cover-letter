@@ -8,3 +8,7 @@ export const deleteCoverLetter = id => ({
 export const toggleForm = () => ({
   type: c.TOGGLE_FORM,
 });
+
+export const viewCoverLetter = () => ({
+  type: c.VIEW_COVER_LETTER,
+});

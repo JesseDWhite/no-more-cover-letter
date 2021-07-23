@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import NewCoverLetterForm from './NewCoverLetterForm';
 import * as a from '../actions/index';
+import CoverLetterList from './CoverLetterList';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
@@ -30,17 +31,21 @@ class CoverLetterControl extends React.Component {
       return (
         <h1>You must be signed in to see this content.</h1>
       );
+    } if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      const currentlyVisibleState = null;
+      if (this.props.formVisibleOnPage) {
+        const currentlyVisibleState = <NewCoverLetterForm />;
+      } else {
+        const currentlyVisibleState = <CoverLetterList
+          createCoverLetter={this.createCoverLetter}
+        />;
+      }
     }
-    if ((isLoaded(auth)) && (auth.currentUser != null)) {
-      const currentlyVisibleState = <NewCoverLetterForm
-        createCoverLetter={this.createCoverLetter}
-      />;
-      return (
-        <>
-          {currentlyVisibleState}
-        </>
-      );
-    }
+    return (
+      <>
+        {currentlyVisibleState}
+      </>
+    );
   }
 }
 
