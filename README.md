@@ -85,5 +85,5 @@ Display final output to users to copy and edit within their own text editor.
   * 14:56 - 15:16: researching more cover letter examples.
   * 15:30 - 16:24: researching how to add Google authentication to gather user info for reusable forms.
   ## 7/23/2021
-  * 13:00 -: gathering list of common programming laguages for text analyzer
+  * 13:00 - 13:45: gathering list of common programming laguages for text analyzer: might come back to this idea later if there is time.
 </details>

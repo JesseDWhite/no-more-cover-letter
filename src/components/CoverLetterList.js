@@ -18,6 +18,10 @@ function CoverLetterList(props) {
             viewCoverLetter={props.viewCoverLetter}
             yourName={coverLetter.yourName}
             companyName={coverLetter.companyName}
+            introParagraph={coverLetter.introParagraph}
+            bodyParagraphOne={coverLetter.bodyParagraphOne}
+            bodyParagraphTwo={coverLetter.bodyParagraphTwo}
+            conclusion={coverLetter.conclusion}
             timeAdded={coverLetter.timeAdded}
             id={coverLetter.id}
             key={coverLetter.id}
