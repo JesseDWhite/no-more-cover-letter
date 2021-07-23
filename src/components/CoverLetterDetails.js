@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 function CoverLetterDetails(props) {
   const { coverLetter } = props;
+
   return (
     <>
       <h1>{coverLetter.companyName}</h1>

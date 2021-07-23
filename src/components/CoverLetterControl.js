@@ -11,13 +11,14 @@ class CoverLetterControl extends React.Component {
     super(props);
     this.state = {
       selectedCoverLetter: null,
+      // selectedJobPosting: null,
     };
   }
 
   goBack = () => {
     if (this.props.formVisibleOnPage === true) {
       const { dispatch } = this.props;
-      const action = a.toggleForm();
+      const action = a.createCoverLetter();
       dispatch(action);
       this.setState({
         selectedCoverLetter: null,
@@ -31,7 +32,7 @@ class CoverLetterControl extends React.Component {
 
   createCoverLetter = () => {
     const { dispatch } = this.props;
-    const action = a.toggleForm();
+    const action = a.createCoverLetter();
     dispatch(action);
   }
 
