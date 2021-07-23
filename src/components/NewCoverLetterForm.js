@@ -64,6 +64,7 @@ function NewCoverLetterForm(props) {
         />
         <button type='submit'>Submit</button>
       </form>
+      <button onClick={() => props.goBack()}>Go Back</button>
     </>
   );
 }

@@ -11,8 +11,22 @@ class CoverLetterControl extends React.Component {
     super(props);
     this.state = {
       selectedCoverLetter: null,
-      //   editing: false,
     };
+  }
+
+  goBack = () => {
+    if (this.props.formVisibleOnPage === true) {
+      const { dispatch } = this.props;
+      const action = a.toggleForm();
+      dispatch(action);
+      this.setState({
+        selectedCoverLetter: null,
+      });
+    } else {
+      this.setState({
+        selectedCoverLetter: null,
+      });
+    }
   }
 
   createCoverLetter = () => {
@@ -59,14 +73,15 @@ class CoverLetterControl extends React.Component {
       if (this.props.formVisibleOnPage) {
         currentlyVisibleState = <NewCoverLetterForm
           createCoverLetter={this.createCoverLetter}
+          goBack={this.goBack}
         />;
       } else if (this.state.selectedCoverLetter != null) {
         currentlyVisibleState = <CoverLetterDetails
           deleteCoverLetter={this.deleteCoverLetter}
+          goBack={this.goBack}
         />;
       } else {
         currentlyVisibleState = <CoverLetterList
-          coverLetterList={this.props.masterCoverLetterList}
           createCoverLetter={this.createCoverLetter}
           viewCoverLetter={this.viewCoverLetter}
         />;
