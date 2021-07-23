@@ -28,6 +28,17 @@ class CoverLetterControl extends React.Component {
     });
   }
 
+  viewCoverLetter = id => {
+    this.props.firestore.get({ collection: 'coverLetters', doc: id }).then(coverLetter => {
+      const firestoreCoverLetter = {
+        yourName: coverLetter.get('yourName'),
+        companyName: coverLetter.get('companyName'),
+        id: coverLetter.id,
+      };
+      this.setState({ selectedCoverLetter: firestoreCoverLetter });
+    });
+  }
+
   render() {
     const auth = this.props.firebase.auth();
     if (!isLoaded(auth)) {
@@ -53,6 +64,7 @@ class CoverLetterControl extends React.Component {
         currentlyVisibleState = <CoverLetterList
           coverLetterList={this.props.masterCoverLetterList}
           createCoverLetter={this.createCoverLetter}
+          viewCoverLetter={this.viewCoverLetter}
         />;
       }
       return (

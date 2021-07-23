@@ -15,7 +15,9 @@ function CoverLetterList(props) {
       <>
         {coverLetters.map(coverLetter => (
           <CoverLetter
+            viewCoverLetter={props.viewCoverLetter}
             yourName={coverLetter.yourName}
+            companyName={coverLetter.companyName}
             timeAdded={coverLetter.timeAdded}
             id={coverLetter.id}
             key={coverLetter.id}

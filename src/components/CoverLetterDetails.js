@@ -1,8 +1,9 @@
 import React from 'react';
 
 function CoverLetterDetails(props) {
+  const { coverLetter } = props;
   return (
-    <h1>{props.companyName}</h1>
+    <h1>{coverLetter.companyName}</h1>
   );
 }
 
