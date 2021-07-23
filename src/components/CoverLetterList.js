@@ -16,6 +16,7 @@ function CoverLetterList(props) {
         {coverLetters.map(coverLetter => (
           <CoverLetter
             viewCoverLetter={props.viewCoverLetter}
+            deleteCoverLetter={props.deleteCoverLetter}
             yourName={coverLetter.yourName}
             companyName={coverLetter.companyName}
             introParagraph={coverLetter.introParagraph}
