@@ -32,20 +32,20 @@ class CoverLetterControl extends React.Component {
         <h1>You must be signed in to see this content.</h1>
       );
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
-      const currentlyVisibleState = null;
+      let currentlyVisibleState = null;
       if (this.props.formVisibleOnPage) {
-        const currentlyVisibleState = <NewCoverLetterForm />;
+        currentlyVisibleState = <NewCoverLetterForm />;
       } else {
-        const currentlyVisibleState = <CoverLetterList
+        currentlyVisibleState = <CoverLetterList
           createCoverLetter={this.createCoverLetter}
         />;
       }
+      return (
+        <>
+          {currentlyVisibleState}
+        </>
+      );
     }
-    return (
-      <>
-        {currentlyVisibleState}
-      </>
-    );
   }
 }
 

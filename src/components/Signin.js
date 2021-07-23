@@ -1,13 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
-// import socialMediaAuth from '../service/auth';
-// import { googleProvider } from '../config/authMethods';
 
 function Signin() {
-  // const signInWithGoogle = async provider => {
-  //   const res = await socialMediaAuth(provider);
-  //   console.log(res);
-  // };
   function doSignUp(e) {
     e.preventDefault();
     const email = e.target.email.value;
@@ -38,7 +32,6 @@ function Signin() {
   }
   return (
     <>
-      {/* <button onClick={() => signInWithGoogle(googleProvider)}>Google</button>; */}
       <h1>Sign Up</h1>
       <form onSubmit={doSignUp}>
         <input
