@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CoverLetterControl from './CoverLetterControl';
 import Header from './Header';
 import Signin from './Signin';
+// import NewCoverLetterForm from './NewCoverLetterForm';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Route path='/'>
           <CoverLetterControl />
         </Route>
+        {/* <Route path='/new-cover-letter'>
+          <NewCoverLetterForm />
+        </Route> */}
       </Switch>
     </Router>
   );
