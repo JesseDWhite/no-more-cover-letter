@@ -14,6 +14,7 @@ function CoverLetter(props) {
 }
 
 CoverLetter.propTypes = {
+  viewCoverLetter: PropTypes.func,
   yourName: PropTypes.string,
   companyName: PropTypes.string,
 };
