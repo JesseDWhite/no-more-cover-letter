@@ -4,12 +4,13 @@ import { withFirestore, isLoaded } from 'react-redux-firebase';
 import NewCoverLetterForm from './NewCoverLetterForm';
 import * as a from '../actions/index';
 import CoverLetterList from './CoverLetterList';
+import CoverLetterDetails from './CoverLetterDetails';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   selectedCoverLetter: null,
+      selectedCoverLetter: null,
       //   editing: false,
     };
   }
@@ -18,6 +19,13 @@ class CoverLetterControl extends React.Component {
     const { dispatch } = this.props;
     const action = a.toggleForm();
     dispatch(action);
+  }
+
+  deleteCoverLetter = id => {
+    this.props.firestore.delete({ collection: 'coverLetters', doc: id });
+    this.setState({
+      selectedCoverLetter: null,
+    });
   }
 
   render() {
@@ -36,6 +44,10 @@ class CoverLetterControl extends React.Component {
       if (this.props.formVisibleOnPage) {
         currentlyVisibleState = <NewCoverLetterForm
           createCoverLetter={this.createCoverLetter}
+        />;
+      } else if (this.state.selectedCoverLetter != null) {
+        currentlyVisibleState = <CoverLetterDetails
+          deleteCoverLetter={this.deleteCoverLetter}
         />;
       } else {
         currentlyVisibleState = <CoverLetterList
