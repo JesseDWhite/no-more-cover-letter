@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import CoverLetter from './CoverLetter';
 
-function CoverLetterList() {
+function CoverLetterList(props) {
   useFirestoreConnect([
     { collection: 'coverLetters' },
   ]);
@@ -21,6 +21,7 @@ function CoverLetterList() {
             key={coverLetter.id}
           />
         ))}
+        <button onClick={() => props.createCoverLetter()}>Add New Cover Letter</button>
       </>
     );
   }

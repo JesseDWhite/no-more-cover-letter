@@ -8,13 +8,14 @@ function NewCoverLetterForm(props) {
   function addCoverLetterToFirestore(e) {
     e.preventDefault();
 
-    const { yourName } = e.target;
+    const { yourName, companyName } = e.target;
 
     props.createCoverLetter();
 
     return firestore.collection('coverLetters').add(
       {
         yourName: yourName.value,
+        companyName: companyName.value,
         timeAdded: firestore.FieldValue.serverTimestamp(),
       }
     );
@@ -27,6 +28,12 @@ function NewCoverLetterForm(props) {
           type='text'
           name='yourName'
         />
+        <label htmlFor='companyName'>Company Name</label>
+        <input
+          type='text'
+          name='companyName'
+        />
+        <label htmlFor='timeAdded'>{firestore.FieldValue.serverTimestamp()}</label>
         <button type='submit'>Submit</button>
       </form>
     </>
