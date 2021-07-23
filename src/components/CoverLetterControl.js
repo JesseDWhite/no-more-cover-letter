@@ -77,6 +77,7 @@ class CoverLetterControl extends React.Component {
         />;
       } else if (this.state.selectedCoverLetter != null) {
         currentlyVisibleState = <CoverLetterDetails
+          coverLetter={this.state.selectedCoverLetter}
           deleteCoverLetter={this.deleteCoverLetter}
           goBack={this.goBack}
         />;

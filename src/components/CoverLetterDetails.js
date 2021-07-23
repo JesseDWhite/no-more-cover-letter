@@ -1,18 +1,23 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function CoverLetterDetails(props) {
-  // const { coverLetter } = props;
+  const { coverLetter } = props;
   return (
     <>
-      <h1>Details Page</h1>
-      <p>{props.coverLetter.introParagraph}</p>
-      <p>{props.coverLetter.bodyParagraphOne}</p>
-      <p>{props.coverLetter.bodyParagraphTwo}</p>
-      <p>{props.coverLetter.conclusion}</p>
+      <h1>{coverLetter.companyName}</h1>
+      <p>{coverLetter.introParagraph}</p>
+      <p>{coverLetter.bodyParagraphOne}</p>
+      <p>{coverLetter.bodyParagraphTwo}</p>
+      <p>{coverLetter.conclusion}</p>
       <button onClick={() => props.goBack()}>Go Back</button>
     </>
   );
 }
+
+CoverLetterDetails.propTypes = {
+  introParagraph: PropTypes.string,
+  bodyParagraphOne: PropTypes.string,
+};
 
 export default CoverLetterDetails;
