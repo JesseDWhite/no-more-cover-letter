@@ -5,7 +5,7 @@ import CoverLetter from './CoverLetter';
 
 function CoverLetterList() {
   useFirestoreConnect([
-    { collection: 'cover-letters' },
+    { collection: 'coverLetters' },
   ]);
 
   const coverLetters = useSelector(state => state.firestore.ordered.coverLetters);
@@ -25,7 +25,7 @@ function CoverLetterList() {
     );
   }
   return (
-    <h3>Loading...</h3>
+    <h3>Loading All Cover Letters...</h3>
   );
 }
 

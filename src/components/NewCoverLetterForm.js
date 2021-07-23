@@ -12,7 +12,7 @@ function NewCoverLetterForm(props) {
 
     props.createCoverLetter();
 
-    return firestore.collection('cover-letters').add(
+    return firestore.collection('coverLetters').add(
       {
         yourName: yourName.value,
         timeAdded: firestore.FieldValue.serverTimestamp(),
