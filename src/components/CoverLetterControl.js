@@ -34,7 +34,9 @@ class CoverLetterControl extends React.Component {
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;
       if (this.props.formVisibleOnPage) {
-        currentlyVisibleState = <NewCoverLetterForm />;
+        currentlyVisibleState = <NewCoverLetterForm
+          createCoverLetter={this.createCoverLetter}
+        />;
       } else {
         currentlyVisibleState = <CoverLetterList
           coverLetterList={this.props.masterCoverLetterList}

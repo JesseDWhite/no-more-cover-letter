@@ -7,7 +7,6 @@ function CoverLetter(props) {
       <div>
         <p>{props.yourName}</p>
         <p>{props.companyName}</p>
-        <p>{props.timeAdded}</p>
       </div>
     </>
   );
@@ -15,7 +14,7 @@ function CoverLetter(props) {
 
 CoverLetter.propTypes = {
   yourName: PropTypes.string,
-  timeAdded: PropTypes.string,
+  companyName: PropTypes.string,
 };
 
 export default CoverLetter;
