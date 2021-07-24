@@ -6,6 +6,7 @@ import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
 import CoverLetterList from './CoverLetterList';
 import CoverLetterDetails from './CoverLetterDetails';
+import NewJobPostingForm from './NewJobPostingForm';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
@@ -17,8 +18,8 @@ class CoverLetterControl extends React.Component {
   }
 
   goBack = () => {
-    if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER) {
-      console.log(this.props.formVisibleOnPage);
+    if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER || this.props.formVisibleOnPage === c.CREATE_JOB_POSTING) {
+      console.log(`first branch: ${this.props.formVisibleOnPage}`);
       const { dispatch } = this.props;
       const action = a.returnToMainPage();
       dispatch(action);
@@ -26,7 +27,7 @@ class CoverLetterControl extends React.Component {
         selectedCoverLetter: null,
       });
     } else {
-      console.log(this.props.formVisibleOnPage);
+      console.log(`second branch: ${this.props.formVisibleOnPage}`);
       this.setState({
         selectedCoverLetter: null,
       });
@@ -36,6 +37,12 @@ class CoverLetterControl extends React.Component {
   createCoverLetter = () => {
     const { dispatch } = this.props;
     const action = a.createCoverLetter();
+    dispatch(action);
+  }
+
+  createJobPosting = () => {
+    const { dispatch } = this.props;
+    const action = a.createJobPosting();
     dispatch(action);
   }
 
@@ -79,6 +86,11 @@ class CoverLetterControl extends React.Component {
           createCoverLetter={this.createCoverLetter}
           goBack={this.goBack}
         />;
+      } else if (this.props.formVisibleOnPage === c.CREATE_JOB_POSTING) {
+        currentlyVisibleState = <NewJobPostingForm
+          createJobPosting={this.createJobPosting}
+          goBack={this.goBack}
+        />;
       } else if (this.state.selectedCoverLetter != null) {
         currentlyVisibleState = <CoverLetterDetails
           coverLetter={this.state.selectedCoverLetter}
@@ -87,6 +99,7 @@ class CoverLetterControl extends React.Component {
         />;
       } else {
         currentlyVisibleState = <CoverLetterList
+          createJobPosting={this.createJobPosting}
           createCoverLetter={this.createCoverLetter}
           viewCoverLetter={this.viewCoverLetter}
         />;

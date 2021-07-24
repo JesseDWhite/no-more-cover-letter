@@ -29,6 +29,7 @@ function CoverLetterList(props) {
           />
         ))}
         <button onClick={() => props.createCoverLetter()}>Add New Cover Letter</button>
+        <button onClick={() => props.createJobPosting()}>Add New Job Posting</button>
       </>
     );
   }
