@@ -8,59 +8,29 @@ function NewCoverLetterForm(props) {
   function addCoverLetterToFirestore(e) {
     e.preventDefault();
 
-    const { yourName,
-      companyName,
-      introParagraph,
-      bodyParagraphOne,
-      bodyParagraphTwo,
-      conclusion } = e.target;
+    const { coverLetter, jobPosting } = e.target;
 
     props.goBack();
 
-    return firestore.collection('coverLetters').add(
+    return firestore.collection('testCase').add(
       {
-        yourName: yourName.value,
-        companyName: companyName.value,
-        timeAdded: firestore.FieldValue.serverTimestamp(),
-        introParagraph: introParagraph.value,
-        bodyParagraphOne: bodyParagraphOne.value,
-        bodyParagraphTwo: bodyParagraphTwo.value,
-        conclusion: conclusion.value,
+        coverLetter: coverLetter.value,
+        jobPosting: jobPosting.value,
       }
     );
   }
   return (
     <>
       <form onSubmit={addCoverLetterToFirestore}>
-        <label htmlFor='yourName'>Your Name</label>
-        <input
-          type='text'
-          name='yourName'
-        />
-        <label htmlFor='companyName'>Company Name</label>
-        <input
-          type='text'
-          name='companyName'
-        />
-        <label htmlFor='introParagraph'>Introductory Paragraph</label>
+        <label htmlFor='coverLetter'>Your Cover Letter</label>
         <textarea
           type='text'
-          name='introParagraph'
+          name='coverLetter'
         />
-        <label htmlFor='bodyParagraphOne'>First Body Paragraph</label>
+        <label htmlFor='jobPosting'>Job Posting</label>
         <textarea
           type='text'
-          name='bodyParagraphOne'
-        />
-        <label htmlFor='bodyParagraphTwo'>Second Body Paragraph</label>
-        <textarea
-          type='text'
-          name='bodyParagraphTwo'
-        />
-        <label htmlFor='conclusion'>Conclusion</label>
-        <textarea
-          type='text'
-          name='conclusion'
+          name='jobPosting'
         />
         <button type='submit'>Submit</button>
       </form>

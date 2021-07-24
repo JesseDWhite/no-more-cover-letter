@@ -4,9 +4,10 @@ import { withFirestore, isLoaded } from 'react-redux-firebase';
 import NewCoverLetterForm from './NewCoverLetterForm';
 import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
-import CoverLetterList from './CoverLetterList';
+// import CoverLetterList from './CoverLetterList';
 import CoverLetterDetails from './CoverLetterDetails';
 import NewJobPostingForm from './NewJobPostingForm';
+import CompareList from './CompareList';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
@@ -15,6 +16,23 @@ class CoverLetterControl extends React.Component {
       selectedCoverLetter: null,
       // selectedJobPosting: null,
     };
+  }
+
+  // compareWord = (coverLetterWord, jobPostingWord) => {
+  //   if (coverLetterWord.toLowerCase() === jobPostingWord.toLowerCase()) {
+
+  //   }
+  // }
+
+  viewCompare = id => {
+    this.props.firestore.get({ collection: 'testCase', doc: id }).then(compare => {
+      const firestoreCoverLetter = {
+        coverLetter: compare.get('coverLetter'),
+        jobPosting: compare.get('jobPosting'),
+        id: compare.id,
+      };
+      this.setState({ selectedCoverLetter: firestoreCoverLetter });
+    });
   }
 
   goBack = () => {
@@ -98,7 +116,7 @@ class CoverLetterControl extends React.Component {
           goBack={this.goBack}
         />;
       } else {
-        currentlyVisibleState = <CoverLetterList
+        currentlyVisibleState = <CompareList
           createJobPosting={this.createJobPosting}
           createCoverLetter={this.createCoverLetter}
           viewCoverLetter={this.viewCoverLetter}
