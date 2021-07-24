@@ -13,6 +13,10 @@ export const createJobPosting = () => ({
   type: c.CREATE_JOB_POSTING,
 });
 
+export const returnToMainPage = () => ({
+  type: c.RETURN_TO_MAIN_PAGE,
+});
+
 export const viewCoverLetter = () => ({
   type: c.VIEW_COVER_LETTER,
 });

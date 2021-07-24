@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import NewCoverLetterForm from './NewCoverLetterForm';
 import * as a from '../actions/index';
+import * as c from '../actions/ActionTypes';
 import CoverLetterList from './CoverLetterList';
 import CoverLetterDetails from './CoverLetterDetails';
 
@@ -16,14 +17,16 @@ class CoverLetterControl extends React.Component {
   }
 
   goBack = () => {
-    if (this.props.formVisibleOnPage === true) {
+    if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER) {
+      console.log(this.props.formVisibleOnPage);
       const { dispatch } = this.props;
-      const action = a.createCoverLetter();
+      const action = a.returnToMainPage();
       dispatch(action);
       this.setState({
         selectedCoverLetter: null,
       });
     } else {
+      console.log(this.props.formVisibleOnPage);
       this.setState({
         selectedCoverLetter: null,
       });
@@ -71,7 +74,7 @@ class CoverLetterControl extends React.Component {
       );
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;
-      if (this.props.formVisibleOnPage) {
+      if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER) {
         currentlyVisibleState = <NewCoverLetterForm
           createCoverLetter={this.createCoverLetter}
           goBack={this.goBack}
