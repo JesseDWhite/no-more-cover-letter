@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import Compare from './Compare';
 
-function CompareList() {
+function CompareList(props) {
   useFirestoreConnect([
     { collection: 'testCase' },
   ]);
@@ -15,6 +15,7 @@ function CompareList() {
       <>
         {testCase.map(test => (
           <Compare
+            compareWord={props.compareWord}
             coverLetter={test.coverLetter}
             jobPosting={test.jobPosting}
           />

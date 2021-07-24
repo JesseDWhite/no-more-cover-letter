@@ -4,7 +4,6 @@ import { withFirestore, isLoaded } from 'react-redux-firebase';
 import NewCoverLetterForm from './NewCoverLetterForm';
 import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
-// import CoverLetterList from './CoverLetterList';
 import CoverLetterDetails from './CoverLetterDetails';
 import NewJobPostingForm from './NewJobPostingForm';
 import CompareList from './CompareList';
@@ -14,15 +13,17 @@ class CoverLetterControl extends React.Component {
     super(props);
     this.state = {
       selectedCoverLetter: null,
-      // selectedJobPosting: null,
     };
   }
 
-  // compareWord = (coverLetterWord, jobPostingWord) => {
-  //   if (coverLetterWord.toLowerCase() === jobPostingWord.toLowerCase()) {
-
-  //   }
-  // }
+  compareWord = (coverLetterWord, jobPostingWord) => {
+    const a = coverLetterWord.replace(/[^\w\s]|_/g, '')
+      .replace(/\s+/g, ' ');
+    const b = jobPostingWord.replace(/[^\w\s]|_/g, '')
+      .replace(/\s+/g, ' ');
+    console.log(`Cover Letter: ${a}`);
+    console.log(`Job Posting: ${b}`);
+  }
 
   viewCompare = id => {
     this.props.firestore.get({ collection: 'testCase', doc: id }).then(compare => {
@@ -120,6 +121,7 @@ class CoverLetterControl extends React.Component {
           createJobPosting={this.createJobPosting}
           createCoverLetter={this.createCoverLetter}
           viewCoverLetter={this.viewCoverLetter}
+          compareWord={this.compareWord}
         />;
       }
       return (
