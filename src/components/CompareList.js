@@ -18,6 +18,8 @@ function CompareList(props) {
             compareWord={props.compareWord}
             coverLetter={test.coverLetter}
             jobPosting={test.jobPosting}
+            id={test.id}
+            key={test.id}
           />
         ))}
       </>

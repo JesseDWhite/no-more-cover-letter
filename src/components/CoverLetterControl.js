@@ -18,11 +18,19 @@ class CoverLetterControl extends React.Component {
 
   compareWord = (coverLetterWord, jobPostingWord) => {
     const a = coverLetterWord.replace(/[^\w\s]|_/g, '')
-      .replace(/\s+/g, ' ');
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
     const b = jobPostingWord.replace(/[^\w\s]|_/g, '')
-      .replace(/\s+/g, ' ');
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
     console.log(`Cover Letter: ${a}`);
     console.log(`Job Posting: ${b}`);
+    const c = a.split(' ');
+    const d = b.split(' ');
+    console.log(`Cover Letter Array: ${c}`);
+    console.log(`Job Posting Array: ${d}`);
+    console.log(`Cover Letter Word Count: ${c.length}`);
+    console.log(`Job Posting Word Count: ${d.length}`);
   }
 
   viewCompare = id => {
