@@ -25,12 +25,15 @@ class CoverLetterControl extends React.Component {
       .toLowerCase();
     console.log(`Cover Letter: ${a}`);
     console.log(`Job Posting: ${b}`);
-    const c = a.split(' ');
-    const d = b.split(' ');
+    const c = a.split(' ')
+      .sort();
+    const d = b.split(' ')
+      .sort();
     console.log(`Cover Letter Array: ${c}`);
     console.log(`Job Posting Array: ${d}`);
     console.log(`Cover Letter Word Count: ${c.length}`);
     console.log(`Job Posting Word Count: ${d.length}`);
+    console.log(`Spliced Cover Letter: ${c.filter(e => e.length > 4)}`);
   }
 
   viewCompare = id => {
