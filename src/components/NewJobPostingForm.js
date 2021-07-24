@@ -10,7 +10,7 @@ function NewJobPostingForm(props) {
 
     const { dutiesAndResponsiblities, requirementsAndQualifications, companyName } = e.target;
 
-    props.createCoverLetter();
+    props.goBack();
 
     return firestore.collection('jobPostings').add(
       {

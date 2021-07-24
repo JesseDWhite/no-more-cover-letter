@@ -15,7 +15,7 @@ function NewCoverLetterForm(props) {
       bodyParagraphTwo,
       conclusion } = e.target;
 
-    props.createCoverLetter();
+    props.goBack();
 
     return firestore.collection('coverLetters').add(
       {
