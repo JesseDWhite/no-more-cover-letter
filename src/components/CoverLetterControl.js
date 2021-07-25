@@ -13,6 +13,9 @@ class CoverLetterControl extends React.Component {
     super(props);
     this.state = {
       selectedCoverLetter: null,
+      languages: c.LANGUAGES,
+      coverLetterArray: [],
+      jobPostingArray: [],
     };
   }
 
@@ -23,24 +26,20 @@ class CoverLetterControl extends React.Component {
     const b = jobPostingWord.replace(/[^\w\s]|_/g, '')
       .replace(/\s+/g, ' ')
       .toLowerCase();
-    console.log(`Cover Letter: ${a}`);
-    console.log(`Job Posting: ${b}`);
     const c = a.split(' ')
       .sort()
-      .filter(e => e.length > 4);
+      .filter(e => this.state.languages.includes(e));
     const d = b.split(' ')
       .sort()
-      .filter(e => e.length > 4);
-    console.log(`Cover Letter Array: ${c}`);
-    console.log(`Job Posting Array: ${d}`);
-    console.log(`Cover Letter Word Count: ${c.length}`);
-    console.log(`Job Posting Word Count: ${d.length}`);
-    console.log(`Keyword Cover Letter: ${c.filter(e => e.length > 4)}`);
-    console.log(`Keyword Job Posting: ${d.filter(e => e.length > 4)}`);
+      .filter(e => this.state.languages.includes(e));
     const finalCoverLetter = [...new Set(c)];
     const finalJobPosting = [...new Set(d)];
     console.log(`Final Cover Letter: ${finalCoverLetter}`);
     console.log(`Final Job Posting: ${finalJobPosting}`);
+    this.setState({
+      coverLetterArray: finalCoverLetter,
+      jobPostingArray: finalJobPosting,
+    });
   }
 
   viewCompare = id => {
@@ -140,6 +139,8 @@ class CoverLetterControl extends React.Component {
           createCoverLetter={this.createCoverLetter}
           viewCoverLetter={this.viewCoverLetter}
           compareWord={this.compareWord}
+          coverLetterArray={this.state.coverLetterArray}
+          jobPostingArray={this.state.jobPostingArray}
         />;
       }
       return (
