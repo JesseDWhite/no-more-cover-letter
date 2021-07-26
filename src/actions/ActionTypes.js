@@ -5,6 +5,7 @@ export const RETURN_TO_MAIN_PAGE = 'RETURN_TO_MAIN_PAGE';
 export const KEYWORDS = [
   'javascript',
   'react',
+  'reactjs',
   'angular',
   'html',
   'css',

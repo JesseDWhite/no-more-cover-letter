@@ -98,9 +98,14 @@ class CoverLetterControl extends React.Component {
         jobPosting: jobComparisons.get('jobPosting'),
         totalScore: jobComparisons.get('totalScore'),
         yourScore: jobComparisons.get('yourScore'),
+        companyName: jobComparisons.get('companyName'),
         id: jobComparisons.id,
       };
-      this.setState({ selectedJobComparison: firestoreJobComparison });
+      this.setState({
+        selectedJobComparison: firestoreJobComparison,
+        jobPostingKeyWords: this.jobPostingKeyWords,
+        coverLetterKeyWords: this.coverLetterKeyWords,
+      });
     });
   }
 
@@ -138,6 +143,7 @@ class CoverLetterControl extends React.Component {
           createJobComparison={this.createJobComparison}
           viewJobComparison={this.viewJobComparison}
           extractKeywords={this.extractKeywords}
+          deleteJobComparison={this.deleteJobComparison}
           coverLetterKeyWords={this.state.coverLetterKeyWords}
           jobPostingKeyWords={this.state.jobPostingKeyWords}
           getScore={this.getScore}
