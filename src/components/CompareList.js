@@ -16,6 +16,7 @@ function CompareList(props) {
         {testCase.map(test => (
           <Compare
             compareWord={props.compareWord}
+            getScore={props.getScore}
             coverLetter={test.coverLetter}
             jobPosting={test.jobPosting}
             id={test.id}

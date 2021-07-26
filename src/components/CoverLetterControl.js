@@ -1,3 +1,5 @@
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/no-unused-state */
 /* eslint-disable no-useless-escape */
 import React from 'react';
 import { connect } from 'react-redux';
@@ -17,6 +19,8 @@ class CoverLetterControl extends React.Component {
       languages: c.LANGUAGES,
       coverLetterArray: [],
       jobPostingArray: [],
+      totalScore: 0,
+      yourScore: 0,
     };
   }
 
@@ -44,6 +48,14 @@ class CoverLetterControl extends React.Component {
     this.setState({
       coverLetterArray: finalCoverLetter,
       jobPostingArray: finalJobPosting,
+    });
+  }
+
+  getScore = () => {
+    const newFinalScore = this.state.jobPostingArray.length;
+    console.log(newFinalScore);
+    this.setState({
+      finalScore: newFinalScore,
     });
   }
 
@@ -147,6 +159,7 @@ class CoverLetterControl extends React.Component {
           compareWord={this.compareWord}
           coverLetterArray={this.state.coverLetterArray}
           jobPostingArray={this.state.jobPostingArray}
+          getScore={this.getScore}
         />;
       }
       return (

@@ -25,6 +25,7 @@ function CoverLetterList(props) {
           <CoverLetter
             viewCoverLetter={props.viewCoverLetter}
             deleteCoverLetter={props.deleteCoverLetter}
+            getScore={props.getScore}
             yourName={coverLetter.yourName}
             companyName={coverLetter.companyName}
             introParagraph={coverLetter.introParagraph}
