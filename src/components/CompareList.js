@@ -17,6 +17,7 @@ function CompareList(props) {
           <Compare
             extractKeywords={props.extractKeywords}
             getScore={props.getScore}
+            viewJobComparison={props.viewJobComparison}
             coverLetter={jobComparison.coverLetter}
             jobPosting={jobComparison.jobPosting}
             id={jobComparison.id}

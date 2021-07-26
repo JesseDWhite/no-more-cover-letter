@@ -68,12 +68,12 @@ class CoverLetterControl extends React.Component {
       const action = a.returnToMainPage();
       dispatch(action);
       this.setState({
-        selectedCoverLetter: null,
+        selectedJobComparison: null,
       });
     } else {
       console.log(`second branch: ${this.props.formVisibleOnPage}`);
       this.setState({
-        selectedCoverLetter: null,
+        selectedJobComparison: null,
       });
     }
   }
@@ -125,7 +125,7 @@ class CoverLetterControl extends React.Component {
         />;
       } else if (this.state.selectedJobComparison != null) {
         currentlyVisibleState = <JobComparisonDetails
-          coverLetter={this.state.selectedCoverLetter}
+          jobComparison={this.state.selectedJobComparison}
           deleteCoverLetter={this.deleteCoverLetter}
           goBack={this.goBack}
         />;
