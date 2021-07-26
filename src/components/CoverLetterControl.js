@@ -16,9 +16,9 @@ class CoverLetterControl extends React.Component {
     super(props);
     this.state = {
       selectedCoverLetter: null,
-      languages: c.LANGUAGES,
-      coverLetterArray: [],
-      jobPostingArray: [],
+      keywords: c.KEYWORDS,
+      coverLetterKeyWords: [],
+      jobPostingKeyWords: [],
       totalScore: 0,
       yourScore: 0,
     };
@@ -37,23 +37,23 @@ class CoverLetterControl extends React.Component {
     console.log(b.split(' '));
     const c = a.split(' ')
       .sort()
-      .filter(e => this.state.languages.includes(e));
+      .filter(e => this.state.keywords.includes(e));
     const d = b.split(' ')
       .sort()
-      .filter(e => this.state.languages.includes(e));
+      .filter(e => this.state.keywords.includes(e));
     const finalCoverLetter = [...new Set(c)];
     const finalJobPosting = [...new Set(d)];
     console.log(`Final Cover Letter: ${finalCoverLetter}`);
     console.log(`Final Job Posting: ${finalJobPosting}`);
     this.setState({
-      coverLetterArray: finalCoverLetter,
-      jobPostingArray: finalJobPosting,
+      coverLetterKeyWords: finalCoverLetter,
+      jobPostingKeyWords: finalJobPosting,
     });
   }
 
   getScore = () => {
-    const newFinalScore = this.state.jobPostingArray.length;
-    const newYourScoreArray = this.state.coverLetterArray.filter(e => this.state.jobPostingArray.includes(e));
+    const newFinalScore = this.state.jobPostingKeyWords.length;
+    const newYourScoreArray = this.state.coverLetterKeyWords.filter(e => this.state.jobPostingKeyWords.includes(e));
     const newYourScore = newYourScoreArray.length;
     console.log(`${newYourScore}/${newFinalScore}`);
     this.setState({
@@ -160,8 +160,8 @@ class CoverLetterControl extends React.Component {
           createCoverLetter={this.createCoverLetter}
           viewCoverLetter={this.viewCoverLetter}
           compareWord={this.compareWord}
-          coverLetterArray={this.state.coverLetterArray}
-          jobPostingArray={this.state.jobPostingArray}
+          coverLetterKeyWords={this.state.coverLetterKeyWords}
+          jobPostingKeyWords={this.state.jobPostingKeyWords}
           getScore={this.getScore}
         />;
       }
