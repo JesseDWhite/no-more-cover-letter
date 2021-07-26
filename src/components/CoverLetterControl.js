@@ -23,12 +23,12 @@ class CoverLetterControl extends React.Component {
     };
   }
 
-  extractKeywords = (coverLetterWord, jobPostingWord) => {
-    const a = coverLetterWord.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+  extractKeywords = (coverLetter, jobPosting) => {
+    const a = coverLetter.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
       .replace(/\s+/g, ' ')
       .toLowerCase();
     console.log(a);
-    const b = jobPostingWord.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+    const b = jobPosting.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
       .replace(/\s+/g, ' ')
       .toLowerCase();
     console.log(b);
@@ -119,14 +119,18 @@ class CoverLetterControl extends React.Component {
       let currentlyVisibleState = null;
       if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON) {
         currentlyVisibleState = <NewJobComparison
-          extractKeywords={this.extractKeywords}
           createJobComparison={this.createJobComparison}
           goBack={this.goBack}
         />;
       } else if (this.state.selectedJobComparison != null) {
         currentlyVisibleState = <JobComparisonDetails
+          coverLetter={this.state.selectedJobComparison}
           jobComparison={this.state.selectedJobComparison}
           deleteCoverLetter={this.deleteCoverLetter}
+          coverLetterKeyWords={this.state.coverLetterKeyWords}
+          jobPostingKeyWords={this.state.jobPostingKeyWords}
+          extractKeywords={this.extractKeywords}
+          getScore={this.getScore}
           goBack={this.goBack}
         />;
       } else {
