@@ -1,70 +1,106 @@
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/no-unused-state */
+/* eslint-disable no-useless-escape */
 import React from 'react';
 import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-import NewCoverLetterForm from './NewCoverLetterForm';
+import NewJobComparison from './NewJobComparison';
 import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
-import CoverLetterList from './CoverLetterList';
-import CoverLetterDetails from './CoverLetterDetails';
-import NewJobPostingForm from './NewJobPostingForm';
+import CompareList from './CompareList';
+import JobComparisonDetails from './JobComparisonDetails';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCoverLetter: null,
-      // selectedJobPosting: null,
+      selectedJobComparison: null,
+      keywords: c.KEYWORDS,
+      coverLetterKeyWords: [],
+      jobPostingKeyWords: [],
+      totalScore: 0,
+      yourScore: 0,
     };
   }
 
+  extractKeywords = (coverLetterWord, jobPostingWord) => {
+    const a = coverLetterWord.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
+    console.log(a);
+    const b = jobPostingWord.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
+    console.log(b);
+    console.log(a.split(' '));
+    console.log(b.split(' '));
+    const c = a.split(' ')
+      .sort()
+      .filter(e => this.state.keywords.includes(e));
+    const d = b.split(' ')
+      .sort()
+      .filter(e => this.state.keywords.includes(e));
+    const finalCoverLetter = [...new Set(c)];
+    const finalJobPosting = [...new Set(d)];
+    console.log(`Final Cover Letter: ${finalCoverLetter}`);
+    console.log(`Final Job Posting: ${finalJobPosting}`);
+    this.setState({
+      coverLetterKeyWords: finalCoverLetter,
+      jobPostingKeyWords: finalJobPosting,
+    });
+  }
+
+  getScore = () => {
+    const newFinalScore = this.state.jobPostingKeyWords.length;
+    const newYourScoreArray = this.state.coverLetterKeyWords.filter(e => this.state.jobPostingKeyWords.includes(e));
+    const newYourScore = newYourScoreArray.length;
+    console.log(`${newYourScore}/${newFinalScore}`);
+    this.setState({
+      finalScore: newFinalScore,
+      yourScore: newYourScore,
+    });
+  }
+
   goBack = () => {
-    if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER || this.props.formVisibleOnPage === c.CREATE_JOB_POSTING) {
+    if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON) {
       console.log(`first branch: ${this.props.formVisibleOnPage}`);
       const { dispatch } = this.props;
       const action = a.returnToMainPage();
       dispatch(action);
       this.setState({
-        selectedCoverLetter: null,
+        selectedJobComparison: null,
       });
     } else {
       console.log(`second branch: ${this.props.formVisibleOnPage}`);
       this.setState({
-        selectedCoverLetter: null,
+        selectedJobComparison: null,
       });
     }
   }
 
-  createCoverLetter = () => {
+  createJobComparison = () => {
     const { dispatch } = this.props;
-    const action = a.createCoverLetter();
+    const action = a.createJobComparison();
     dispatch(action);
   }
 
-  createJobPosting = () => {
-    const { dispatch } = this.props;
-    const action = a.createJobPosting();
-    dispatch(action);
-  }
-
-  deleteCoverLetter = id => {
-    this.props.firestore.delete({ collection: 'coverLetters', doc: id });
+  deleteJobComparison = id => {
+    this.props.firestore.delete({ collection: 'jobComparisons', doc: id });
     this.setState({
-      selectedCoverLetter: null,
+      selectedJobComparison: null,
     });
   }
 
-  viewCoverLetter = id => {
-    this.props.firestore.get({ collection: 'coverLetters', doc: id }).then(coverLetter => {
-      const firestoreCoverLetter = {
-        yourName: coverLetter.get('yourName'),
-        companyName: coverLetter.get('companyName'),
-        introParagraph: coverLetter.get('introParagraph'),
-        bodyParagraphOne: coverLetter.get('bodyParagraphOne'),
-        bodyParagraphTwo: coverLetter.get('bodyParagraphTwo'),
-        conclusion: coverLetter.get('conclusion'),
-        id: coverLetter.id,
+  viewJobComparison = id => {
+    this.props.firestore.get({ collection: 'jobComparisons', doc: id }).then(jobComparisons => {
+      const firestoreJobComparison = {
+        coverLetter: jobComparisons.get('coverLetter'),
+        jobPosting: jobComparisons.get('jobPosting'),
+        totalScore: jobComparisons.get('totalScore'),
+        yourScore: jobComparisons.get('yourScore'),
+        id: jobComparisons.id,
       };
-      this.setState({ selectedCoverLetter: firestoreCoverLetter });
+      this.setState({ selectedJobComparison: firestoreJobComparison });
     });
   }
 
@@ -81,27 +117,26 @@ class CoverLetterControl extends React.Component {
       );
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;
-      if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER) {
-        currentlyVisibleState = <NewCoverLetterForm
-          createCoverLetter={this.createCoverLetter}
+      if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON) {
+        currentlyVisibleState = <NewJobComparison
+          extractKeywords={this.extractKeywords}
+          createJobComparison={this.createJobComparison}
           goBack={this.goBack}
         />;
-      } else if (this.props.formVisibleOnPage === c.CREATE_JOB_POSTING) {
-        currentlyVisibleState = <NewJobPostingForm
-          createJobPosting={this.createJobPosting}
-          goBack={this.goBack}
-        />;
-      } else if (this.state.selectedCoverLetter != null) {
-        currentlyVisibleState = <CoverLetterDetails
-          coverLetter={this.state.selectedCoverLetter}
+      } else if (this.state.selectedJobComparison != null) {
+        currentlyVisibleState = <JobComparisonDetails
+          jobComparison={this.state.selectedJobComparison}
           deleteCoverLetter={this.deleteCoverLetter}
           goBack={this.goBack}
         />;
       } else {
-        currentlyVisibleState = <CoverLetterList
-          createJobPosting={this.createJobPosting}
-          createCoverLetter={this.createCoverLetter}
-          viewCoverLetter={this.viewCoverLetter}
+        currentlyVisibleState = <CompareList
+          createJobComparison={this.createJobComparison}
+          viewJobComparison={this.viewJobComparison}
+          extractKeywords={this.extractKeywords}
+          coverLetterKeyWords={this.state.coverLetterKeyWords}
+          jobPostingKeyWords={this.state.jobPostingKeyWords}
+          getScore={this.getScore}
         />;
       }
       return (
