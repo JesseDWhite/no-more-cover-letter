@@ -53,9 +53,12 @@ class CoverLetterControl extends React.Component {
 
   getScore = () => {
     const newFinalScore = this.state.jobPostingArray.length;
-    console.log(newFinalScore);
+    const newYourScoreArray = this.state.coverLetterArray.filter(e => this.state.jobPostingArray.includes(e));
+    const newYourScore = newYourScoreArray.length;
+    console.log(`${newYourScore}/${newFinalScore}`);
     this.setState({
       finalScore: newFinalScore,
+      yourScore: newYourScore,
     });
   }
 
