@@ -5,25 +5,25 @@ import Compare from './Compare';
 
 function CompareList(props) {
   useFirestoreConnect([
-    { collection: 'testCase' },
+    { collection: 'jobComparisons' },
   ]);
 
-  const testCase = useSelector(state => state.firestore.ordered.testCase);
+  const jobComparisons = useSelector(state => state.firestore.ordered.jobComparisons);
 
-  if (isLoaded(testCase)) {
+  if (isLoaded(jobComparisons)) {
     return (
       <>
-        {testCase.map(test => (
+        {jobComparisons.map(jobComparison => (
           <Compare
-            compareWord={props.compareWord}
+            extractKeywords={props.extractKeywords}
             getScore={props.getScore}
-            coverLetter={test.coverLetter}
-            jobPosting={test.jobPosting}
-            id={test.id}
-            key={test.id}
+            coverLetter={jobComparison.coverLetter}
+            jobPosting={jobComparison.jobPosting}
+            id={jobComparison.id}
+            key={jobComparison.id}
           />
         ))}
-        <button onClick={() => props.createCoverLetter()}>Add New Cover Letter</button>
+        <button onClick={() => props.createJobComparison()}>Add New Job Comparison</button>
       </>
 
     );

@@ -4,18 +4,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-import NewCoverLetterForm from './NewCoverLetterForm';
+import NewJobComparison from './NewJobComparison';
 import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
-import CoverLetterDetails from './CoverLetterDetails';
-import NewJobPostingForm from './NewJobPostingForm';
 import CompareList from './CompareList';
+import JobComparisonDetails from './JobComparisonDetails';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCoverLetter: null,
+      selectedJobComparison: null,
       keywords: c.KEYWORDS,
       coverLetterKeyWords: [],
       jobPostingKeyWords: [],
@@ -24,7 +23,7 @@ class CoverLetterControl extends React.Component {
     };
   }
 
-  compareWord = (coverLetterWord, jobPostingWord) => {
+  extractKeywords = (coverLetterWord, jobPostingWord) => {
     const a = coverLetterWord.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
       .replace(/\s+/g, ' ')
       .toLowerCase();
@@ -62,19 +61,8 @@ class CoverLetterControl extends React.Component {
     });
   }
 
-  viewCompare = id => {
-    this.props.firestore.get({ collection: 'testCase', doc: id }).then(compare => {
-      const firestoreCoverLetter = {
-        coverLetter: compare.get('coverLetter'),
-        jobPosting: compare.get('jobPosting'),
-        id: compare.id,
-      };
-      this.setState({ selectedCoverLetter: firestoreCoverLetter });
-    });
-  }
-
   goBack = () => {
-    if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER || this.props.formVisibleOnPage === c.CREATE_JOB_POSTING) {
+    if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON) {
       console.log(`first branch: ${this.props.formVisibleOnPage}`);
       const { dispatch } = this.props;
       const action = a.returnToMainPage();
@@ -90,37 +78,29 @@ class CoverLetterControl extends React.Component {
     }
   }
 
-  createCoverLetter = () => {
+  createJobComparison = () => {
     const { dispatch } = this.props;
-    const action = a.createCoverLetter();
+    const action = a.createJobComparison();
     dispatch(action);
   }
 
-  createJobPosting = () => {
-    const { dispatch } = this.props;
-    const action = a.createJobPosting();
-    dispatch(action);
-  }
-
-  deleteCoverLetter = id => {
-    this.props.firestore.delete({ collection: 'coverLetters', doc: id });
+  deleteJobComparison = id => {
+    this.props.firestore.delete({ collection: 'jobComparisons', doc: id });
     this.setState({
-      selectedCoverLetter: null,
+      selectedJobComparison: null,
     });
   }
 
-  viewCoverLetter = id => {
-    this.props.firestore.get({ collection: 'coverLetters', doc: id }).then(coverLetter => {
-      const firestoreCoverLetter = {
-        yourName: coverLetter.get('yourName'),
-        companyName: coverLetter.get('companyName'),
-        introParagraph: coverLetter.get('introParagraph'),
-        bodyParagraphOne: coverLetter.get('bodyParagraphOne'),
-        bodyParagraphTwo: coverLetter.get('bodyParagraphTwo'),
-        conclusion: coverLetter.get('conclusion'),
-        id: coverLetter.id,
+  viewJobComparison = id => {
+    this.props.firestore.get({ collection: 'jobComparisons', doc: id }).then(jobComparisons => {
+      const firestoreJobComparison = {
+        coverLetter: jobComparisons.get('coverLetter'),
+        jobPosting: jobComparisons.get('jobPosting'),
+        totalScore: jobComparisons.get('totalScore'),
+        yourScore: jobComparisons.get('yourScore'),
+        id: jobComparisons.id,
       };
-      this.setState({ selectedCoverLetter: firestoreCoverLetter });
+      this.setState({ selectedJobComparison: firestoreJobComparison });
     });
   }
 
@@ -137,29 +117,23 @@ class CoverLetterControl extends React.Component {
       );
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;
-      if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER) {
-        currentlyVisibleState = <NewCoverLetterForm
-          compareWord={this.compareWord}
-          createCoverLetter={this.createCoverLetter}
+      if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON) {
+        currentlyVisibleState = <NewJobComparison
+          extractKeywords={this.extractKeywords}
+          createJobComparison={this.createJobComparison}
           goBack={this.goBack}
         />;
-      } else if (this.props.formVisibleOnPage === c.CREATE_JOB_POSTING) {
-        currentlyVisibleState = <NewJobPostingForm
-          createJobPosting={this.createJobPosting}
-          goBack={this.goBack}
-        />;
-      } else if (this.state.selectedCoverLetter != null) {
-        currentlyVisibleState = <CoverLetterDetails
+      } else if (this.state.selectedJobComparison != null) {
+        currentlyVisibleState = <JobComparisonDetails
           coverLetter={this.state.selectedCoverLetter}
           deleteCoverLetter={this.deleteCoverLetter}
           goBack={this.goBack}
         />;
       } else {
         currentlyVisibleState = <CompareList
-          createJobPosting={this.createJobPosting}
-          createCoverLetter={this.createCoverLetter}
-          viewCoverLetter={this.viewCoverLetter}
-          compareWord={this.compareWord}
+          createJobComparison={this.createJobComparison}
+          viewJobComparison={this.viewJobComparison}
+          extractKeywords={this.extractKeywords}
           coverLetterKeyWords={this.state.coverLetterKeyWords}
           jobPostingKeyWords={this.state.jobPostingKeyWords}
           getScore={this.getScore}

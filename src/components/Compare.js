@@ -5,7 +5,7 @@ function Compare(props) {
     <>
       <p>{props.coverLetter}</p>
       <p>{props.jobPosting}</p>
-      <button onClick={() => props.compareWord(props.coverLetter, props.jobPosting)}>Compare</button>
+      <button onClick={() => props.extractKeywords(props.coverLetter, props.jobPosting)}>Compare</button>
       <button onClick={() => props.getScore()}>Get Score</button>
     </>
   );
