@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
 import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
@@ -20,12 +21,12 @@ class CoverLetterControl extends React.Component {
   }
 
   compareWord = (coverLetterWord, jobPostingWord) => {
-    const a = coverLetterWord.replace(/[.,/!$%^&*;:{}=_`~()]/g, '')
-      .replace(/\s{2,}/g, ' ')
+    const a = coverLetterWord.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+      .replace(/\s+/g, ' ')
       .toLowerCase();
     console.log(a);
-    const b = jobPostingWord.replace(/[.,/!$%^&*;:{}=_`~()]/g, '')
-      .replace(/\s{2,}/g, ' ')
+    const b = jobPostingWord.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+      .replace(/\s+/g, ' ')
       .toLowerCase();
     console.log(b);
     console.log(a.split(' '));

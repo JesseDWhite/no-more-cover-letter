@@ -103,4 +103,5 @@ export const LANGUAGES = [
   'safari',
   'collaborate',
   'empathy',
+  'api',
 ];
