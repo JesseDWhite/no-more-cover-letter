@@ -20,12 +20,16 @@ class CoverLetterControl extends React.Component {
   }
 
   compareWord = (coverLetterWord, jobPostingWord) => {
-    const a = coverLetterWord.replace(/[^\w\s]|_/g, '')
-      .replace(/\s+/g, ' ')
+    const a = coverLetterWord.replace(/[.,/!$%^&*;:{}=_`~()]/g, '')
+      .replace(/\s{2,}/g, ' ')
       .toLowerCase();
-    const b = jobPostingWord.replace(/[^\w\s]|_/g, '')
-      .replace(/\s+/g, ' ')
+    console.log(a);
+    const b = jobPostingWord.replace(/[.,/!$%^&*;:{}=_`~()]/g, '')
+      .replace(/\s{2,}/g, ' ')
       .toLowerCase();
+    console.log(b);
+    console.log(a.split(' '));
+    console.log(b.split(' '));
     const c = a.split(' ')
       .sort()
       .filter(e => this.state.languages.includes(e));
@@ -119,6 +123,7 @@ class CoverLetterControl extends React.Component {
       let currentlyVisibleState = null;
       if (this.props.formVisibleOnPage === c.CREATE_COVER_LETTER) {
         currentlyVisibleState = <NewCoverLetterForm
+          compareWord={this.compareWord}
           createCoverLetter={this.createCoverLetter}
           goBack={this.goBack}
         />;

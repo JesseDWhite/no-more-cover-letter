@@ -22,7 +22,9 @@ function CompareList(props) {
             key={test.id}
           />
         ))}
+        <button onClick={() => props.createCoverLetter()}>Add New Cover Letter</button>
       </>
+
     );
   }
   return (
