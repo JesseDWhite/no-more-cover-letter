@@ -51,12 +51,12 @@ class CoverLetterControl extends React.Component {
   }
 
   getScore = () => {
-    const newFinalScore = this.state.jobPostingKeyWords.length;
+    const newTotalScore = this.state.jobPostingKeyWords.length;
     const newYourScoreArray = this.state.coverLetterKeyWords.filter(e => this.state.jobPostingKeyWords.includes(e));
     const newYourScore = newYourScoreArray.length;
-    console.log(`${newYourScore}/${newFinalScore}`);
+    console.log(`${newYourScore}/${newTotalScore}`);
     this.setState({
-      finalScore: newFinalScore,
+      totalScore: newTotalScore,
       yourScore: newYourScore,
     });
   }
@@ -134,6 +134,8 @@ class CoverLetterControl extends React.Component {
           deleteCoverLetter={this.deleteCoverLetter}
           coverLetterKeyWords={this.state.coverLetterKeyWords}
           jobPostingKeyWords={this.state.jobPostingKeyWords}
+          yourScore={this.state.yourScore}
+          totalScore={this.state.totalScore}
           extractKeywords={this.extractKeywords}
           getScore={this.getScore}
           goBack={this.goBack}
