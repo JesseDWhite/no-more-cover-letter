@@ -74,6 +74,8 @@ class CoverLetterControl extends React.Component {
       console.log(`second branch: ${this.props.formVisibleOnPage}`);
       this.setState({
         selectedJobComparison: null,
+        coverLetterKeyWords: [],
+        jobPostingKeyWords: [],
       });
     }
   }
