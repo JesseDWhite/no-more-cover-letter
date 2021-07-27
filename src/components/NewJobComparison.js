@@ -23,21 +23,34 @@ function NewJobComparison(props) {
   return (
     <>
       <form onSubmit={addJobComparisonToFireStore}>
-        <label htmlFor='companyName'>Company Name</label>
-        <input
-          type='text'
-          name='companyName'
-        />
-        <label htmlFor='coverLetter'>Your Cover Letter</label>
-        <textarea
-          type='text'
-          name='coverLetter'
-        />
-        <label htmlFor='jobPosting'>The Job Posting You Are Applying To</label>
-        <textarea
-          type='text'
-          name='jobPosting'
-        />
+        <div className='row'>
+          <div className='col-12'>
+            <label htmlFor='companyName'>Company Name</label>
+            <input
+              className='form-control'
+              type='text'
+              name='companyName'
+            />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-6'>
+            <label htmlFor='coverLetter'>Your Cover Letter</label>
+            <textarea
+              className='form-control'
+              type='text'
+              name='coverLetter'
+            />
+          </div>
+          <div className='col-6'>
+            <label htmlFor='jobPosting'>The Job Posting You Are Applying To</label>
+            <textarea
+              className='form-control'
+              type='text'
+              name='jobPosting'
+            />
+          </div>
+        </div>
         <button type='submit'>Submit</button>
       </form>
       <button onClick={() => props.goBack()}>Go Back</button>

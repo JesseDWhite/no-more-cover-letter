@@ -1,16 +1,29 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
+import styled from 'styled-components';
+
+const JobCompareCard = styled.div`
+  font-size: 24px;
+  text-align: center;
+  background-color: grey:
+`;
 
 function Compare(props) {
   return (
     <>
-      <div className='col-3'>
-        <button onClick={() => props.viewJobComparison(
-          props.id,
-          props.coverLetter,
-          props.jobPosting)}
-        >
-          View {props.companyName}
-        </button>
+      <div className='row'>
+        <JobCompareCard>
+          <div
+            className='card'
+            onClick={() => props.viewJobComparison(
+              props.id,
+              props.coverLetter,
+              props.jobPosting)}
+          >
+            View {props.companyName}
+          </div>
+        </JobCompareCard>
       </div>
     </>
   );
