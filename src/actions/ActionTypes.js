@@ -123,4 +123,5 @@ export const KEYWORDS = [
   'cloudbased',
   'design',
   'blockchain',
+  'pair-programming',
 ];
