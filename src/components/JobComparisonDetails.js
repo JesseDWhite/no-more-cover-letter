@@ -31,7 +31,7 @@ function JobComparisonDetails(props) {
 
   return (
     <>
-      <h1>Details Page</h1>
+      <h2>{props.jobComparison.companyName}</h2>
       <div className='row'>
         <div className='col-6 card'>
           <h3>Cover Letter</h3>

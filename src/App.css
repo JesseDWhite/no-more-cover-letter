@@ -16,7 +16,6 @@ h1,h2,h3 {
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
-  min-width: 500px;
   max-width: 49%;
   transition: background-color 1s;
 }
@@ -25,25 +24,12 @@ h1,h2,h3 {
   background-color: lightblue;
 }
 
+.btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
 .form-control {
   margin-top: 15px;
-  margin-bottom:15px ;
-}
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  margin-bottom: 15px;
 }

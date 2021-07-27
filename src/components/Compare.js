@@ -6,7 +6,6 @@ import styled from 'styled-components';
 const JobCompareCard = styled.div`
   font-size: 24px;
   text-align: center;
-  background-color: grey:
 `;
 
 function Compare(props) {

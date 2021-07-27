@@ -20,40 +20,45 @@ function NewJobComparison(props) {
       }
     );
   }
+
   return (
     <>
-      <form onSubmit={addJobComparisonToFireStore}>
-        <div className='row'>
-          <div className='col-12'>
-            <label htmlFor='companyName'>Company Name</label>
-            <input
-              className='form-control'
-              type='text'
-              name='companyName'
-            />
+      <div className='card'>
+        <form onSubmit={addJobComparisonToFireStore}>
+          <div className='row'>
+            <div className='col-8'>
+              <label htmlFor='companyName'>Company Name</label>
+              <input
+                className='form-control'
+                type='text'
+                name='companyName'
+              />
+            </div>
           </div>
-        </div>
-        <div className='row'>
-          <div className='col-6'>
-            <label htmlFor='coverLetter'>Your Cover Letter</label>
-            <textarea
-              className='form-control'
-              type='text'
-              name='coverLetter'
-            />
+          <div className='row'>
+            <div className='col-6'>
+              <label htmlFor='coverLetter'>Your Cover Letter</label>
+              <textarea
+                className='form-control'
+                type='text'
+                name='coverLetter'
+                rows='20'
+              />
+            </div>
+            <div className='col-6'>
+              <label htmlFor='jobPosting'>The Job Posting You Are Applying To</label>
+              <textarea
+                className='form-control'
+                type='text'
+                name='jobPosting'
+                rows='20'
+              />
+            </div>
           </div>
-          <div className='col-6'>
-            <label htmlFor='jobPosting'>The Job Posting You Are Applying To</label>
-            <textarea
-              className='form-control'
-              type='text'
-              name='jobPosting'
-            />
-          </div>
-        </div>
-        <button type='submit'>Submit</button>
-      </form>
-      <button onClick={() => props.goBack()}>Go Back</button>
+          <button type='submit' className='btn btn-success'>Submit</button>
+        </form>
+        <button onClick={() => props.goBack()}>Go Back</button>
+      </div>
     </>
   );
 }
