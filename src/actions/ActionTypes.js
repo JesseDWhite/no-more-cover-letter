@@ -32,7 +32,6 @@ export const KEYWORDS = [
   'node',
   'nodejs',
   'algorithm',
-  'array',
   'boolean',
   'variable',
   'program',
@@ -123,4 +122,5 @@ export const KEYWORDS = [
   'cloud',
   'cloudbased',
   'design',
+  'blockchain',
 ];
