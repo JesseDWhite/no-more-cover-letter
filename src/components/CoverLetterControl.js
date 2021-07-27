@@ -46,7 +46,9 @@ class CoverLetterControl extends React.Component {
     console.log(`Final Job Posting: ${finalJobPosting}`);
     this.setState({
       coverLetterKeyWords: finalCoverLetter,
-      jobPostingKeyWords: finalJobPosting,
+      jobPostingKeyWords: finalJobPosting.map(keyWord => (
+        <li key={keyWord}>{keyWord}</li>
+      )),
     });
   }
 
