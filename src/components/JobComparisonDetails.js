@@ -14,6 +14,7 @@ function JobComparisonDetails(props) {
         Compare
       </button>
       <button onClick={() => props.getScore()}>Get Score</button>
+      <button onClick={() => props.editJobComparison()}>Edit</button>
       <button onClick={() => props.goBack()}>Go Back</button>
       {props.button}
     </>

@@ -70,7 +70,7 @@ class CoverLetterControl extends React.Component {
   }
 
   goBack = () => {
-    if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON) {
+    if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON || this.props.formVisibleOnPage === c.EDIT_JOB_COMPARISON) {
       console.log(`first branch: ${this.props.formVisibleOnPage}`);
       const { dispatch } = this.props;
       const action = a.returnToMainPage();
@@ -153,12 +153,14 @@ class CoverLetterControl extends React.Component {
         />;
       } else if (this.props.formVisibleOnPage === c.EDIT_JOB_COMPARISON) {
         currentlyVisibleState = <EditJobComparison
-          createJobComparison={this.createJobComparison}
+          jobComparison={this.state.selectedJobComparison}
+          editJobComparison={this.editJobComparison}
           goBack={this.goBack}
         />;
       } else if (this.state.selectedJobComparison != null) {
         currentlyVisibleState = <JobComparisonDetails
           coverLetter={this.state.selectedJobComparison}
+          editJobComparison={this.editJobComparison}
           jobComparison={this.state.selectedJobComparison}
           deleteCoverLetter={this.deleteCoverLetter}
           coverLetterKeyWords={this.state.coverLetterKeyWords}

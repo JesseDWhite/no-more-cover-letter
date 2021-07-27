@@ -8,7 +8,7 @@ function NewJobComparison(props) {
   function addJobComparisonToFireStore(e) {
     e.preventDefault();
 
-    const { coverLetter, jobPosting, companyName, totalScore, yourScore, yourPercentage } = e.target;
+    const { coverLetter, jobPosting, companyName } = e.target;
 
     props.goBack();
 
@@ -17,9 +17,6 @@ function NewJobComparison(props) {
         coverLetter: coverLetter.value,
         jobPosting: jobPosting.value,
         companyName: companyName.value,
-        totalScore: totalScore.value,
-        yourScore: yourScore.value,
-        yourPercentage: yourPercentage.value,
       }
     );
   }
@@ -40,24 +37,6 @@ function NewJobComparison(props) {
         <textarea
           type='text'
           name='jobPosting'
-        />
-        <input
-          readOnly
-          value={0}
-          type='number'
-          name='yourScore'
-        />
-        <input
-          readOnly
-          value={0}
-          type='number'
-          name='totalScore'
-        />
-        <input
-          readOnly
-          value={0}
-          type='number'
-          name='yourPercentage'
         />
         <button type='submit'>Submit</button>
       </form>
