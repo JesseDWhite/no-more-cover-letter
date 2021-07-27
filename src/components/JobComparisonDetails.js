@@ -7,16 +7,7 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       return (
         <div className='row'>
-          <div className='col-4'>
-            <p>Keywords We Found in the Job Posting</p>
-            <ul>
-              {jobKeyWords.map(keyWord => (
-                <li key={keyWord}>{keyWord}</li>
-              ))}
-              <button onClick={() => props.getScore()}>Get Score</button>
-            </ul>
-          </div>
-          <div className='col-4'>
+          <div className='col-6 card'>
             <p>Keywords We Found in Your Cover Letter</p>
             <ul>
               {coverLetterKeyWords.map(keyWord => (
@@ -24,6 +15,15 @@ function JobComparisonDetails(props) {
               ))}
             </ul>
           </div>
+          <div className='col-6 card'>
+            <p>Keywords We Found in the Job Posting</p>
+            <ul>
+              {jobKeyWords.map(keyWord => (
+                <li key={keyWord}>{keyWord}</li>
+              ))}
+            </ul>
+          </div>
+          <button onClick={() => props.getScore()}>Get Score</button>
         </div>
       );
     }

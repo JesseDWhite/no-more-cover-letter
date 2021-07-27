@@ -4,6 +4,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
+import { Link } from 'react-router-dom';
 import NewJobComparison from './NewJobComparison';
 import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
@@ -51,8 +52,6 @@ class CoverLetterControl extends React.Component {
     const newYourScoreArray = this.state.coverLetterKeyWords.filter(e => this.state.jobPostingKeyWords.includes(e));
     const newYourScore = newYourScoreArray.length;
     const percentage = newYourScore / newTotalScore * 100;
-    console.log(`${newYourScore}/${newTotalScore}`);
-    console.log(`${percentage.toFixed(0)}%`);
     this.setState({
       totalScore: newTotalScore,
       yourScore: newYourScore,
@@ -62,7 +61,6 @@ class CoverLetterControl extends React.Component {
 
   goBack = () => {
     if (this.props.formVisibleOnPage === c.CREATE_JOB_COMPARISON || this.props.formVisibleOnPage === c.EDIT_JOB_COMPARISON) {
-      console.log(`first branch: ${this.props.formVisibleOnPage}`);
       const { dispatch } = this.props;
       const action = a.returnToMainPage();
       dispatch(action);
@@ -75,7 +73,6 @@ class CoverLetterControl extends React.Component {
         yourPercentage: 0,
       });
     } else {
-      console.log(`second branch: ${this.props.formVisibleOnPage}`);
       this.setState({
         selectedJobComparison: null,
         coverLetterKeyWords: [],
@@ -111,9 +108,9 @@ class CoverLetterControl extends React.Component {
       const firestoreJobComparison = {
         coverLetter: jobComparisons.get('coverLetter'),
         jobPosting: jobComparisons.get('jobPosting'),
+        companyName: jobComparisons.get('companyName'),
         totalScore: jobComparisons.get('totalScore'),
         yourScore: jobComparisons.get('yourScore'),
-        companyName: jobComparisons.get('companyName'),
         id: jobComparisons.id,
       };
       this.setState({
@@ -133,7 +130,9 @@ class CoverLetterControl extends React.Component {
     }
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
       return (
-        <h1>You must be signed in to see this content.</h1>
+        <div className='card'>
+          <Link to='/signin'><h2>You must be signed in to see this content.</h2></Link>
+        </div>
       );
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;
@@ -153,7 +152,7 @@ class CoverLetterControl extends React.Component {
           coverLetter={this.state.selectedJobComparison}
           jobComparison={this.state.selectedJobComparison}
           editJobComparison={this.editJobComparison}
-          deleteCoverLetter={this.deleteCoverLetter}
+          deleteJobComparison={this.deleteJobComparison}
           coverLetterKeyWords={this.state.coverLetterKeyWords}
           jobPostingKeyWords={this.state.jobPostingKeyWords}
           yourScore={this.state.yourScore}

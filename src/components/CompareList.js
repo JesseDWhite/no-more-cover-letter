@@ -15,13 +15,7 @@ function CompareList(props) {
       <>
         {jobComparisons.map(jobComparison => (
           <Compare
-            jobPostingKeyWords={props.jobPostingKeyWords}
-            extractKeywords={props.extractKeywords}
-            getScore={props.getScore}
             viewJobComparison={props.viewJobComparison}
-            deleteJobComparison={props.deleteJobComparison}
-            coverLetter={jobComparison.coverLetter}
-            jobPosting={jobComparison.jobPosting}
             companyName={jobComparison.companyName}
             id={jobComparison.id}
             key={jobComparison.id}
