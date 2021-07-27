@@ -4,8 +4,16 @@ function JobComparisonDetails(props) {
   return (
     <>
       <h1>Details Page</h1>
-      <p>{props.jobComparison.coverLetter}</p>
-      <p>{props.jobComparison.jobPosting}</p>
+      <div className='row'>
+        <div className='col-6'>
+          <h3>Cover Letter</h3>
+          <p>{props.jobComparison.coverLetter}</p>
+        </div>
+        <div className='col-6'>
+          <h3>Job Posting</h3>
+          <p>{props.jobComparison.jobPosting}</p>
+        </div>
+      </div>
       <p>Job Posting Key Words:</p>
       <ul>{props.jobPostingKeyWords}</ul>
       <p>Keywords that match: {props.yourScore}/{props.totalScore}</p>
