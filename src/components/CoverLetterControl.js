@@ -20,6 +20,7 @@ class CoverLetterControl extends React.Component {
       jobPostingKeyWords: [],
       totalScore: 0,
       yourScore: 0,
+      yourPercentage: 0,
     };
   }
 
@@ -59,10 +60,11 @@ class CoverLetterControl extends React.Component {
     const newYourScore = newYourScoreArray.length;
     const percentage = newYourScore / newTotalScore * 100;
     console.log(`${newYourScore}/${newTotalScore}`);
-    console.log(`${percentage.round()}%`);
+    console.log(`${percentage.toFixed(0)}%`);
     this.setState({
       totalScore: newTotalScore,
       yourScore: newYourScore,
+      yourPercentage: percentage.toFixed(0),
     });
   }
 
@@ -74,6 +76,11 @@ class CoverLetterControl extends React.Component {
       dispatch(action);
       this.setState({
         selectedJobComparison: null,
+        coverLetterKeyWords: [],
+        jobPostingKeyWords: [],
+        totalScore: 0,
+        yourScore: 0,
+        yourPercentage: 0,
       });
     } else {
       console.log(`second branch: ${this.props.formVisibleOnPage}`);
@@ -81,6 +88,9 @@ class CoverLetterControl extends React.Component {
         selectedJobComparison: null,
         coverLetterKeyWords: [],
         jobPostingKeyWords: [],
+        totalScore: 0,
+        yourScore: 0,
+        yourPercentage: 0,
       });
     }
   }
