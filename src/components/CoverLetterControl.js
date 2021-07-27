@@ -9,6 +9,7 @@ import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
 import CompareList from './CompareList';
 import JobComparisonDetails from './JobComparisonDetails';
+import EditJobComparison from './EditJobComparison';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
@@ -101,6 +102,12 @@ class CoverLetterControl extends React.Component {
     dispatch(action);
   }
 
+  editJobComparison = () => {
+    const { dispatch } = this.props;
+    const action = a.editJobComparison();
+    dispatch(action);
+  }
+
   deleteJobComparison = id => {
     this.props.firestore.delete({ collection: 'jobComparisons', doc: id });
     this.setState({
@@ -144,6 +151,11 @@ class CoverLetterControl extends React.Component {
           createJobComparison={this.createJobComparison}
           goBack={this.goBack}
         />;
+      } else if (this.props.formVisibleOnPage === c.EDIT_JOB_COMPARISON) {
+        currentlyVisibleState = <EditJobComparison
+          createJobComparison={this.createJobComparison}
+          goBack={this.goBack}
+        />;
       } else if (this.state.selectedJobComparison != null) {
         currentlyVisibleState = <JobComparisonDetails
           coverLetter={this.state.selectedJobComparison}
@@ -153,6 +165,7 @@ class CoverLetterControl extends React.Component {
           jobPostingKeyWords={this.state.jobPostingKeyWords}
           yourScore={this.state.yourScore}
           totalScore={this.state.totalScore}
+          yourPercentage={this.state.yourPercentage}
           extractKeywords={this.extractKeywords}
           getScore={this.getScore}
           goBack={this.goBack}

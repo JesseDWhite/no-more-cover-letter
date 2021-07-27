@@ -7,3 +7,7 @@ export const createJobComparison = () => ({
 export const returnToMainPage = () => ({
   type: c.RETURN_TO_MAIN_PAGE,
 });
+
+export const editJobComparison = () => ({
+  type: c.EDIT_JOB_COMPARISON,
+});

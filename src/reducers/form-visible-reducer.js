@@ -6,6 +6,8 @@ export default (state = c.RETURN_TO_MAIN_PAGE, action) => {
       return state = c.CREATE_JOB_COMPARISON;
     case c.RETURN_TO_MAIN_PAGE:
       return state = c.RETURN_TO_MAIN_PAGE;
+    case c.EDIT_JOB_COMPARISON:
+      return state = c.EDIT_JOB_COMPARISON;
     default:
       return state;
   }

@@ -1,5 +1,6 @@
 export const CREATE_JOB_COMPARISON = 'CREATE_JOB_COMPARISON';
 export const RETURN_TO_MAIN_PAGE = 'RETURN_TO_MAIN_PAGE';
+export const EDIT_JOB_COMPARISON = 'EDIT_JOB_COMPARISON';
 export const KEYWORDS = [
   'javascript',
   'react',

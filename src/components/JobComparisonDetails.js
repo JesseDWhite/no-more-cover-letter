@@ -8,7 +8,8 @@ function JobComparisonDetails(props) {
       <p>{props.jobComparison.jobPosting}</p>
       <p>Job Posting Key Words:</p>
       <ul>{props.jobPostingKeyWords}</ul>
-      <p>Application Score: {props.yourScore}/{props.totalScore}</p>
+      <p>Keywords that match: {props.yourScore}/{props.totalScore}</p>
+      <p>Cover Letter Grade: {props.yourPercentage}%</p>
       <button onClick={() => props.extractKeywords(props.jobComparison.coverLetter, props.jobComparison.jobPosting)}>
         Compare
       </button>
