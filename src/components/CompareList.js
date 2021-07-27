@@ -27,7 +27,7 @@ function CompareList(props) {
             key={jobComparison.id}
           />
         ))}
-        <button onClick={() => props.createJobComparison()}>Add New Job Comparison</button>
+        <button className='btn btn-primary' onClick={() => props.createJobComparison()}>Add New Job Comparison</button>
       </>
 
     );
