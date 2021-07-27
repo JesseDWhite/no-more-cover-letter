@@ -160,8 +160,8 @@ class CoverLetterControl extends React.Component {
       } else if (this.state.selectedJobComparison != null) {
         currentlyVisibleState = <JobComparisonDetails
           coverLetter={this.state.selectedJobComparison}
-          editJobComparison={this.editJobComparison}
           jobComparison={this.state.selectedJobComparison}
+          editJobComparison={this.editJobComparison}
           deleteCoverLetter={this.deleteCoverLetter}
           coverLetterKeyWords={this.state.coverLetterKeyWords}
           jobPostingKeyWords={this.state.jobPostingKeyWords}
@@ -176,11 +176,6 @@ class CoverLetterControl extends React.Component {
         currentlyVisibleState = <CompareList
           createJobComparison={this.createJobComparison}
           viewJobComparison={this.viewJobComparison}
-          extractKeywords={this.extractKeywords}
-          deleteJobComparison={this.deleteJobComparison}
-          coverLetterKeyWords={this.state.coverLetterKeyWords}
-          jobPostingKeyWords={this.state.jobPostingKeyWords}
-          getScore={this.getScore}
         />;
       }
       return (
