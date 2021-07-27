@@ -86,6 +86,7 @@ export const KEYWORDS = [
   'troubleshoot',
   'troubleshooting',
   'vue.js',
+  'vuejs',
   'sproutcore',
   'oriented',
   'object-oriented',

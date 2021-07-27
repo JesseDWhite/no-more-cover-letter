@@ -46,9 +46,10 @@ class CoverLetterControl extends React.Component {
     console.log(`Final Job Posting: ${finalJobPosting}`);
     this.setState({
       coverLetterKeyWords: finalCoverLetter,
-      jobPostingKeyWords: finalJobPosting.map(keyWord => (
-        <li key={keyWord}>{keyWord}</li>
-      )),
+      jobPostingKeyWords: finalJobPosting,
+      // jobPostingKeyWords: finalJobPosting.map(keyWord => (
+      //   <li key={keyWord}>{keyWord}</li>
+      // )),
     });
   }
 
@@ -56,7 +57,9 @@ class CoverLetterControl extends React.Component {
     const newTotalScore = this.state.jobPostingKeyWords.length;
     const newYourScoreArray = this.state.coverLetterKeyWords.filter(e => this.state.jobPostingKeyWords.includes(e));
     const newYourScore = newYourScoreArray.length;
+    const percentage = newYourScore / newTotalScore * 100;
     console.log(`${newYourScore}/${newTotalScore}`);
+    console.log(`${percentage.round()}%`);
     this.setState({
       totalScore: newTotalScore,
       yourScore: newYourScore,
