@@ -26,32 +26,23 @@ class CoverLetterControl extends React.Component {
   }
 
   extractKeywords = (coverLetter, jobPosting) => {
-    const a = coverLetter.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+    const removeNonLetterFromCoverLetter = coverLetter.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
       .replace(/\s+/g, ' ')
       .toLowerCase();
-    console.log(a);
-    const b = jobPosting.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
+    const removeNonLetterFromJobPosting = jobPosting.replace(/[.,\/!$%\^&\*;:{}=\_`~()]/g, '')
       .replace(/\s+/g, ' ')
       .toLowerCase();
-    console.log(b);
-    console.log(a.split(' '));
-    console.log(b.split(' '));
-    const c = a.split(' ')
+    const extractMatchingWordsCoverLetter = removeNonLetterFromCoverLetter.split(' ')
       .sort()
       .filter(e => this.state.keywords.includes(e));
-    const d = b.split(' ')
+    const extractMatchingWordsJobPosting = removeNonLetterFromJobPosting.split(' ')
       .sort()
       .filter(e => this.state.keywords.includes(e));
-    const finalCoverLetter = [...new Set(c)];
-    const finalJobPosting = [...new Set(d)];
-    console.log(`Final Cover Letter: ${finalCoverLetter}`);
-    console.log(`Final Job Posting: ${finalJobPosting}`);
+    const coverLetterKeyWordsNoDups = [...new Set(extractMatchingWordsCoverLetter)];
+    const jobPostingKeyWordsNoDups = [...new Set(extractMatchingWordsJobPosting)];
     this.setState({
-      coverLetterKeyWords: finalCoverLetter,
-      jobPostingKeyWords: finalJobPosting,
-      // jobPostingKeyWords: finalJobPosting.map(keyWord => (
-      //   <li key={keyWord}>{keyWord}</li>
-      // )),
+      coverLetterKeyWords: coverLetterKeyWordsNoDups,
+      jobPostingKeyWords: jobPostingKeyWordsNoDups,
     });
   }
 
