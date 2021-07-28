@@ -13,7 +13,7 @@ function Header() {
           <div className='container-fluid'>
             <Link to='/' className='navbar-brand'>
               <img src='https://media.giphy.com/media/RH7HREzgpzUuWMeFJu/giphy.gif' width='80px' alt='paper and pencil' />
-              No More Cover</Link>
+              No More Cover Letter</Link>
             <span className='navbar-text'>
               <Link to='/signin'>
                 Account

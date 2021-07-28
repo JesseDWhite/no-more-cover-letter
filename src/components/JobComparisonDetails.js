@@ -41,7 +41,7 @@ function JobComparisonDetails(props) {
           <div className='row'>
             <button className='btn btn-success mb-3' onClick={() => props.getScore()}>Get Score</button>
             <div className='col-6 card'>
-              <p>Keywords We Found in Your Cover Letter</p>
+              <h5>Keywords We Found in Your Cover Letter</h5>
               <ul>
                 {coverLetterKeyWords.map(keyWord => (
                   <li key={keyWord}>{keyWord}</li>
@@ -49,7 +49,7 @@ function JobComparisonDetails(props) {
               </ul>
             </div>
             <div className='col-6 card'>
-              <p>Keywords We Found in the Job Posting</p>
+              <h5>Keywords We Found in the Job Posting</h5>
               <ul>
                 {jobKeyWords.map(keyWord => (
                   <li key={keyWord}>{keyWord}</li>
