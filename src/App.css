@@ -9,7 +9,7 @@ body {
   margin-bottom: 50px;
 }
 
-h1,h2,h3 {
+h1,h2,h3,h4 {
   text-align: center;
 }
 .card {
@@ -85,4 +85,8 @@ h1,h2,h3 {
   width: 750px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.score-btn {
+  width: 300px;
 }

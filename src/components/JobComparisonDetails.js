@@ -38,7 +38,7 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       return (
         <div>
-          <button className='btn btn-success mb-3' onClick={() => props.getScore()}>Get Score</button>
+          <button className='btn btn-success mb-3 score-btn' onClick={() => props.getScore()}>Get Score</button>
           <div className='row'>
             <div className='col-6 card keyword-card'>
               <h4>Keywords We Found in Your Cover Letter</h4>
