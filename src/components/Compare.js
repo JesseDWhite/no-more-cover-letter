@@ -11,7 +11,7 @@ const JobCompareCard = styled.div`
 function Compare(props) {
   return (
     <>
-      <div className='row'>
+      <div className='row main-list'>
         <JobCompareCard>
           <div
             className='card'
