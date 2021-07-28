@@ -32,16 +32,6 @@ function JobComparisonDetails(props) {
   return (
     <>
       <h2>{props.jobComparison.companyName}</h2>
-      <div className='row'>
-        <div className='col-6 card'>
-          <h3>Cover Letter</h3>
-          <p>{props.jobComparison.coverLetter}</p>
-        </div>
-        <div className='col-6 card'>
-          <h3>Job Posting</h3>
-          <p>{props.jobComparison.jobPosting}</p>
-        </div>
-      </div>
       {displayListOfKeyWords()}
       <p>Keywords that match: {props.yourScore}/{props.totalScore}</p>
       <p>Cover Letter Grade: {props.yourPercentage}%</p>
@@ -54,7 +44,16 @@ function JobComparisonDetails(props) {
       <button onClick={() => props.deleteJobComparison(props.id)}>Delete</button>
       <button onClick={() => props.editJobComparison()}>Edit</button>
       <button onClick={() => props.goBack()}>Go Back</button>
-      {props.button}
+      <div className='row'>
+        <div className='col-6 card'>
+          <h3>Cover Letter</h3>
+          <p>{props.jobComparison.coverLetter}</p>
+        </div>
+        <div className='col-6 card'>
+          <h3>Job Posting</h3>
+          <p>{props.jobComparison.jobPosting}</p>
+        </div>
+      </div>
     </>
   );
 }
