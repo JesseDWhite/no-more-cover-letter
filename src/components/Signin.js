@@ -1,6 +1,5 @@
 import React from 'react';
 import firebase from 'firebase/app';
-import { Link } from 'react-router-dom';
 
 function Signin() {
   function doSignUp(e) {
@@ -33,7 +32,6 @@ function Signin() {
   }
   return (
     <>
-      <Link to='/'>Home</Link>
       <div className='row'>
         <div className='col-6 card'>
           <h1>Sign Up</h1>

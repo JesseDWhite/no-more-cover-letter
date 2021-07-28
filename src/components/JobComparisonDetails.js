@@ -1,3 +1,5 @@
+/* eslint-disable react/style-prop-object */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
 function JobComparisonDetails(props) {
@@ -7,7 +9,7 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       return (
         <div className='row'>
-          <button onClick={() => props.getScore()}>Get Score</button>
+          <button className='btn btn-success' onClick={() => props.getScore()}>Get Score</button>
           <div className='col-6 card'>
             <p>Keywords We Found in Your Cover Letter</p>
             <ul>
@@ -55,13 +57,36 @@ function JobComparisonDetails(props) {
           </div>
         </div>
       </div>
-      <div className='card'>
-        <div className='row'>
-          <div className='col-6'>
-            <p>Keywords that match: {props.yourScore}/{props.totalScore}</p>
+      <div className='row'>
+        <div className='col-4'>
+          <div className='card'>
+            <div className='card-body'>
+              <h5 className='card-title'>Keywords That Match</h5>
+              <div className='card-text'>
+                <p>{props.yourScore}/{props.totalScore}</p>
+              </div>
+            </div>
           </div>
-          <div className='col-6'>
-            <p>Cover Letter Grade: {props.yourPercentage}%</p>
+        </div>
+        <div className='col-4'>
+          <div className='card'>
+            <div className='card-body'>
+              <h5 className='card-title'>Cover Letter Grade</h5>
+              <div className='card-text'>
+                <div className='progress' style={{ height: '3rem' }}>
+                  <div
+                    className='progress-bar progress-bar-striped progress-bar-animated'
+                    role='progressbar'
+                    aria-valuenow={props.yourPercentage}
+                    aria-valuemin='0'
+                    aria-valuemax='100'
+                    style={{ width: `${props.yourPercentage}%` }}
+                  >
+                    {props.yourPercentage}%
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

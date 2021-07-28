@@ -1,19 +1,19 @@
 body {
-  margin: 30px;
   background-image: linear-gradient(rgb(69, 69, 255), rgb(148, 225, 255));
   background-attachment: fixed;
   height: 100%;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly; */
+  justify-content: space-evenly;
+  margin-bottom: 50px;
 }
 
 h1,h2,h3 {
   text-align: center;
 }
 .card {
-  margin: 15px;
+  margin-top: 30px;
   padding: 25px;
   flex-wrap: wrap;
   margin-left: auto;
@@ -28,7 +28,6 @@ h1,h2,h3 {
 
 .btn {
   margin-top: 15px;
-  width: 100%;
 }
 
 .form-control {
