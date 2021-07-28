@@ -4,7 +4,6 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 50px;
 }
@@ -44,7 +43,11 @@ h1,h2,h3,h4 {
 
 .job-compare-card {
   margin: 80px;
+  max-width: 75%;
   box-shadow: 15px 10px 8px #0000001c;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .list-card {
@@ -73,20 +76,26 @@ h1,h2,h3,h4 {
 }
 
 .score-view {
-  background-color: rgba(128, 128, 128, 0.26);
+  background-color: rgba(187, 187, 187, 0.26);
   width: 400px;
   border-radius: 25px;
+  box-shadow: 15px 10px 8px #0000001c;
 }
 
 .keyword-card {
-  background-color: rgba(128, 128, 128, 0.26);
+  background-color: rgba(187, 187, 187, 0.26);
   border-radius: 25px;
   padding: 50px;
-  width: 750px;
+  width: 500px;
   margin-top: 20px;
   margin-bottom: 20px;
+  box-shadow: 15px 10px 8px #0000001c;
+
 }
 
-.score-btn {
+.score-button {
   width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
 }

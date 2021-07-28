@@ -38,7 +38,11 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       return (
         <div>
-          <button className='btn btn-success mb-3 score-btn' onClick={() => props.getScore()}>Get Score</button>
+          <div className='score-button'>
+            <button className='btn btn-success' center onClick={() => props.getScore()}>
+              Find Out Your Grade
+            </button>
+          </div>
           <div className='row'>
             <div className='col-6 card keyword-card'>
               <h4>Keywords We Found in Your Cover Letter</h4>
@@ -49,7 +53,7 @@ function JobComparisonDetails(props) {
               </ul>
             </div>
             <div className='col-6 card keyword-card'>
-              <h4>Keywords We Found in the Job Posting</h4>
+              <h4>Keywords We Found in this Job Posting</h4>
               <ul>
                 {jobKeyWords.map(keyWord => (
                   <li key={keyWord}>{keyWord}</li>
@@ -99,7 +103,7 @@ function JobComparisonDetails(props) {
                     aria-valuemax='100'
                     style={{ width: `${props.yourPercentage}%` }}
                   >
-                    <h4 className='mt-2'>{props.yourPercentage}%</h4>
+                    <h4 className='mt-2'>{props.yourPercentage}% of keywords addressed. Keep it up!</h4>
                   </div>
                 </div>
               </div>
