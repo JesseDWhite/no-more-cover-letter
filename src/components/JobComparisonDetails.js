@@ -86,6 +86,25 @@ function JobComparisonDetails(props) {
           <div className='col-3'>
             <button className='btn btn-dark' onClick={() => props.goBack()}>Go Back</button>
           </div>
+          <div className='card'>
+            <div className='card-body'>
+              <h5 className='card-title'>Cover Letter Percentage</h5>
+              <div className='card-text'>
+                <div className='progress' style={{ height: '5em' }}>
+                  <div
+                    className='progress-bar progress-bar-striped progress-bar-animated'
+                    role='progressbar'
+                    aria-valuenow={props.yourPercentage}
+                    aria-valuemin='0'
+                    aria-valuemax='100'
+                    style={{ width: `${props.yourPercentage}%` }}
+                  >
+                    <h5 className='mt-2'>{props.yourPercentage}%</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className='row score-card'>
           <div className='col-6'>
@@ -94,7 +113,6 @@ function JobComparisonDetails(props) {
                 <h5 className='card-title'>Keywords That Match</h5>
                 <div className='card-text'>
                   <p>{props.yourScore}/{props.totalScore}</p>
-                  {determineGrade()}
                 </div>
               </div>
             </div>
@@ -102,20 +120,9 @@ function JobComparisonDetails(props) {
           <div className='col-6'>
             <div className='card'>
               <div className='card-body'>
-                <h5 className='card-title'>Cover Letter Grade</h5>
+                <h5 className='card-title'>Your Grade</h5>
                 <div className='card-text'>
-                  <div className='progress' style={{ height: '5em' }}>
-                    <div
-                      className='progress-bar progress-bar-striped progress-bar-animated'
-                      role='progressbar'
-                      aria-valuenow={props.yourPercentage}
-                      aria-valuemin='0'
-                      aria-valuemax='100'
-                      style={{ width: `${props.yourPercentage}%` }}
-                    >
-                      <h5 className='mt-2'>{props.yourPercentage}%</h5>
-                    </div>
-                  </div>
+                  {determineGrade()}
                 </div>
               </div>
             </div>
