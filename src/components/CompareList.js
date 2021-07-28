@@ -13,15 +13,17 @@ function CompareList(props) {
   if (isLoaded(jobComparisons)) {
     return (
       <>
-        {jobComparisons.map(jobComparison => (
-          <Compare
-            viewJobComparison={props.viewJobComparison}
-            companyName={jobComparison.companyName}
-            id={jobComparison.id}
-            key={jobComparison.id}
-          />
-        ))}
         <button className='btn btn-primary' onClick={() => props.createJobComparison()}>Add New Job Comparison</button>
+        <div className='row'>
+          {jobComparisons.map(jobComparison => (
+            <Compare
+              viewJobComparison={props.viewJobComparison}
+              companyName={jobComparison.companyName}
+              id={jobComparison.id}
+              key={jobComparison.id}
+            />
+          ))}
+        </div>
       </>
 
     );
