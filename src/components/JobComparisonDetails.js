@@ -1,6 +1,14 @@
 import React from 'react';
 
 function JobComparisonDetails(props) {
+  const determineGrade = () => {
+    const yourGrade = props.yourPercentage;
+    if (yourGrade === 40) {
+      return (
+        <p>F</p>
+      );
+    }
+  };
   const displayListOfKeyWords = () => {
     const jobKeyWords = props.jobPostingKeyWords;
     const { coverLetterKeyWords } = props;
@@ -63,6 +71,7 @@ function JobComparisonDetails(props) {
                 <h5 className='card-title'>Keywords That Match</h5>
                 <div className='card-text'>
                   <p>{props.yourScore}/{props.totalScore}</p>
+                  {determineGrade()}
                 </div>
               </div>
             </div>
