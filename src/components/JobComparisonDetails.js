@@ -2,10 +2,33 @@ import React from 'react';
 
 function JobComparisonDetails(props) {
   const determineGrade = () => {
+    const jobKeyWords = props.jobPostingKeyWords;
     const yourGrade = props.yourPercentage;
-    if (yourGrade === 40) {
+    if (jobKeyWords !== undefined) {
+      if (yourGrade < 20) {
+        return (
+          <p>F</p>
+        );
+      } else if (yourGrade >= 20 && yourGrade < 40) {
+        return (
+          <p>D</p>
+        );
+      } else if (yourGrade >= 40 && yourGrade < 60) {
+        return (
+          <p>C</p>
+        );
+      } else if (yourGrade >= 60 && yourGrade <= 80) {
+        return (
+          <p>B</p>
+        );
+      } else if (yourGrade >= 80) {
+        return (
+          <p>A</p>
+        );
+      }
+    } else {
       return (
-        <p>F</p>
+        <p>Not Yet Graded</p>
       );
     }
   };
