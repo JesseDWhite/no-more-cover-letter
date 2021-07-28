@@ -7,8 +7,8 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       return (
         <div>
-          <button className='btn btn-success' onClick={() => props.getScore()}>Get Score</button>
           <div className='row'>
+            <button className='btn btn-success mb-3' onClick={() => props.getScore()}>Get Score</button>
             <div className='col-6 card'>
               <p>Keywords We Found in Your Cover Letter</p>
               <ul>
@@ -33,9 +33,9 @@ function JobComparisonDetails(props) {
 
   return (
     <>
-      <h2>{props.jobComparison.companyName}</h2>
-      <div className='card'>
-        <div className='row'>
+      <div className='card job-compare-card'>
+        <h2 className='card-title'>{props.jobComparison.companyName}</h2>
+        <div className='row mt-5'>
           <div className='col-3'>
             <button
               className='btn btn-dark'
@@ -56,7 +56,7 @@ function JobComparisonDetails(props) {
             <button className='btn btn-dark' onClick={() => props.goBack()}>Go Back</button>
           </div>
         </div>
-        <div className='row'>
+        <div className='row score-card'>
           <div className='col-6'>
             <div className='card'>
               <div className='card-body'>
@@ -81,7 +81,7 @@ function JobComparisonDetails(props) {
                       aria-valuemax='100'
                       style={{ width: `${props.yourPercentage}%` }}
                     >
-                      {props.yourPercentage}%
+                      <h5 className='mt-2'>{props.yourPercentage}%</h5>
                     </div>
                   </div>
                 </div>
@@ -89,8 +89,8 @@ function JobComparisonDetails(props) {
             </div>
           </div>
         </div>
+        {displayListOfKeyWords()}
       </div>
-      {displayListOfKeyWords()}
       {/* <div className='row'>
         <div className='col-6 card'>
           <h3>Cover Letter</h3>
