@@ -55,3 +55,34 @@ h1,h2,h3 {
   text-align: center;
   font-size: 40px;
 }
+
+#grade-f {
+  color: red;
+}
+#grade-d {
+  color: orange;
+}
+#grade-c {
+  color: rgb(177, 177, 0);
+}
+#grade-b {
+  color: rgb(10, 196, 187);
+}
+#grade-a {
+  color: rgb(0, 177, 0);
+}
+
+.score-view {
+  background-color: rgba(128, 128, 128, 0.26);
+  width: 400px;
+  border-radius: 25px;
+}
+
+.keyword-card {
+  background-color: rgba(128, 128, 128, 0.26);
+  border-radius: 25px;
+  padding: 50px;
+  width: 750px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

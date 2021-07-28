@@ -7,23 +7,23 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       if (yourGrade < 20) {
         return (
-          <p>F</p>
+          <p id='grade-f'>F</p>
         );
       } else if (yourGrade >= 20 && yourGrade < 40) {
         return (
-          <p>D</p>
+          <p id='grade-d'>D</p>
         );
       } else if (yourGrade >= 40 && yourGrade < 60) {
         return (
-          <p>C</p>
+          <p id='grade-c'>C</p>
         );
       } else if (yourGrade >= 60 && yourGrade <= 80) {
         return (
-          <p>B</p>
+          <p id='grade-b'>B</p>
         );
       } else if (yourGrade >= 80) {
         return (
-          <p>A</p>
+          <p id='grade-a'>A</p>
         );
       }
     } else {
@@ -38,18 +38,18 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       return (
         <div>
+          <button className='btn btn-success mb-3' onClick={() => props.getScore()}>Get Score</button>
           <div className='row'>
-            <button className='btn btn-success mb-3' onClick={() => props.getScore()}>Get Score</button>
-            <div className='col-6 card'>
-              <h5>Keywords We Found in Your Cover Letter</h5>
+            <div className='col-6 card keyword-card'>
+              <h4>Keywords We Found in Your Cover Letter</h4>
               <ul>
                 {coverLetterKeyWords.map(keyWord => (
                   <li key={keyWord}>{keyWord}</li>
                 ))}
               </ul>
             </div>
-            <div className='col-6 card'>
-              <h5>Keywords We Found in the Job Posting</h5>
+            <div className='col-6 card keyword-card'>
+              <h4>Keywords We Found in the Job Posting</h4>
               <ul>
                 {jobKeyWords.map(keyWord => (
                   <li key={keyWord}>{keyWord}</li>
@@ -86,9 +86,9 @@ function JobComparisonDetails(props) {
           <div className='col-3'>
             <button className='btn btn-dark' onClick={() => props.goBack()}>Go Back</button>
           </div>
-          <div className='card'>
+          <div className='card mt-3'>
             <div className='card-body'>
-              <h5 className='card-title'>Cover Letter Percentage</h5>
+              <h4 className='card-title'>Coverage of Keywords</h4>
               <div className='card-text'>
                 <div className='progress' style={{ height: '5em' }}>
                   <div
@@ -99,18 +99,18 @@ function JobComparisonDetails(props) {
                     aria-valuemax='100'
                     style={{ width: `${props.yourPercentage}%` }}
                   >
-                    <h5 className='mt-2'>{props.yourPercentage}%</h5>
+                    <h4 className='mt-2'>{props.yourPercentage}%</h4>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className='row score-card'>
+        <div className='row score-card mb-5'>
           <div className='col-6'>
-            <div className='card'>
+            <div className='card score-view'>
               <div className='card-body'>
-                <h5 className='card-title'>Keywords That Match</h5>
+                <h4 className='card-title'>Keywords That Match</h4>
                 <div className='card-text'>
                   <p>{props.yourScore}/{props.totalScore}</p>
                 </div>
@@ -118,9 +118,9 @@ function JobComparisonDetails(props) {
             </div>
           </div>
           <div className='col-6'>
-            <div className='card'>
+            <div className='card score-view'>
               <div className='card-body'>
-                <h5 className='card-title'>Your Grade</h5>
+                <h4 className='card-title'>Your Grade</h4>
                 <div className='card-text'>
                   {determineGrade()}
                 </div>
