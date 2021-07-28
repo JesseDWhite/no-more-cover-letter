@@ -7,6 +7,7 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== undefined) {
       return (
         <div className='row'>
+          <button onClick={() => props.getScore()}>Get Score</button>
           <div className='col-6 card'>
             <p>Keywords We Found in Your Cover Letter</p>
             <ul>
@@ -23,7 +24,6 @@ function JobComparisonDetails(props) {
               ))}
             </ul>
           </div>
-          <button onClick={() => props.getScore()}>Get Score</button>
         </div>
       );
     }
@@ -32,18 +32,40 @@ function JobComparisonDetails(props) {
   return (
     <>
       <h2>{props.jobComparison.companyName}</h2>
+      <div className='card'>
+        <div className='row'>
+          <div className='col-3'>
+            <button
+              className='btn btn-dark'
+              onClick={() => props.extractKeywords(
+                props.jobComparison.coverLetter,
+                props.jobComparison.jobPosting)}
+            >
+              Compare
+            </button>
+          </div>
+          <div className='col-3'>
+            <button className='btn btn-dark' onClick={() => props.deleteJobComparison(props.id)}>Delete</button>
+          </div>
+          <div className='col-3'>
+            <button className='btn btn-dark' onClick={() => props.editJobComparison()}>Edit</button>
+          </div>
+          <div className='col-3'>
+            <button className='btn btn-dark' onClick={() => props.goBack()}>Go Back</button>
+          </div>
+        </div>
+      </div>
+      <div className='card'>
+        <div className='row'>
+          <div className='col-6'>
+            <p>Keywords that match: {props.yourScore}/{props.totalScore}</p>
+          </div>
+          <div className='col-6'>
+            <p>Cover Letter Grade: {props.yourPercentage}%</p>
+          </div>
+        </div>
+      </div>
       {displayListOfKeyWords()}
-      <p>Keywords that match: {props.yourScore}/{props.totalScore}</p>
-      <p>Cover Letter Grade: {props.yourPercentage}%</p>
-      <button onClick={() => props.extractKeywords(
-        props.jobComparison.coverLetter,
-        props.jobComparison.jobPosting)}
-      >
-        Compare
-      </button>
-      <button onClick={() => props.deleteJobComparison(props.id)}>Delete</button>
-      <button onClick={() => props.editJobComparison()}>Edit</button>
-      <button onClick={() => props.goBack()}>Go Back</button>
       <div className='row'>
         <div className='col-6 card'>
           <h3>Cover Letter</h3>
