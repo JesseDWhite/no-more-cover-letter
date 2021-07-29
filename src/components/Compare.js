@@ -15,7 +15,7 @@ function Compare(props) {
             props.jobPosting)}
         >
           View {props.companyName}
-          <img src='./../img/cover-letter.png' alt='memo with tab' />
+          <img src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif' alt='memo with tab' width='100px' />
         </div>
       </div>
     </>
