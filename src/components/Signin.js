@@ -32,46 +32,49 @@ function Signin() {
   }
   return (
     <>
-      <div className='row'>
-        <div className='col-6 card'>
-          <h1>Sign Up</h1>
-          <form onSubmit={doSignUp}>
-            <input
-              className='form-control'
-              type='text'
-              name='email'
-              placeholder='Email'
-            />
-            <input
-              className='form-control'
-              type='password'
-              name='password'
-              placeholder='Password'
-            />
-            <button type='submit'>Sign Up</button>
-          </form>
+      <div className='card job-compare-card'>
+        <div className='row'>
+          <div className='col-6 card'>
+            <h2>Sign Up</h2>
+            <form onSubmit={doSignUp}>
+              <input
+                className='form-control'
+                type='text'
+                name='email'
+                placeholder='Email'
+              />
+              <input
+                className='form-control'
+                type='password'
+                name='password'
+                placeholder='Password'
+              />
+              <button className='btn btn-primary' type='submit'>Sign Up</button>
+            </form>
+          </div>
         </div>
-        <div className='col-6 card'>
-          <h1>Sign In</h1>
-          <form onSubmit={doSignIn}>
-            <input
-              className='form-control'
-              type='text'
-              name='signinEmail'
-              placeholder='Email'
-            />
-            <input
-              className='form-control'
-              type='password'
-              name='signinPassword'
-              placeholder='Password'
-            />
-            <button type='submit'>Sign In</button>
-          </form>
+        <div className='row'>
+          <div className='col-6 card'>
+            <h2>Sign In</h2>
+            <form onSubmit={doSignIn}>
+              <input
+                className='form-control'
+                type='text'
+                name='signinEmail'
+                placeholder='Email'
+              />
+              <input
+                className='form-control'
+                type='password'
+                name='signinPassword'
+                placeholder='Password'
+              />
+              <button className='btn btn-primary mb-3' type='submit'>Sign In</button>
+            </form>
+            <button className='btn btn-danger' onClick={doSignOut}>Sign Out</button>
+          </div>
         </div>
       </div>
-      <h1>Sign Out</h1>
-      <button onClick={doSignOut}>Sign Out</button>
     </>
   );
 }
