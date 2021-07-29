@@ -37,17 +37,19 @@ function EditJobComparison(props) {
                 className='form-control'
                 type='text'
                 name='companyName'
+                value={jobComparison.companyName}
               />
             </div>
           </div>
           <div className='row'>
             <div className='col-6'>
-              <h4>Company Name</h4>
+              <h4>Cover Letter</h4>
               <textarea
                 className='form-control'
                 type='text'
                 name='coverLetter'
                 rows='20'
+                value={jobComparison.coverLetter}
               />
             </div>
             <div className='col-6'>
@@ -57,6 +59,7 @@ function EditJobComparison(props) {
                 type='text'
                 name='jobPosting'
                 rows='20'
+                value={jobComparison.jobPosting}
               />
             </div>
           </div>
