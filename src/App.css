@@ -59,7 +59,7 @@ h1,h2,h3,h4 {
 }
 
 .list-card:hover {
-  background-color: rgb(255, 166, 0);
+  background-color: rgb(252,190,65);
   width: 325px;
   height: 325px;
   color: white;
@@ -108,4 +108,8 @@ h1,h2,h3,h4 {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;
+}
+
+.card-image {
+  margin: 20px;
 }

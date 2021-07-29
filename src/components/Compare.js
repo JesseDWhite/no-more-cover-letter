@@ -15,7 +15,12 @@ function Compare(props) {
             props.jobPosting)}
         >
           View {props.companyName}
-          <img src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif' alt='memo with tab' width='100px' />
+          <img
+            className='card-image'
+            src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
+            alt='memo with tab'
+            width='100px'
+          />
         </div>
       </div>
     </>
