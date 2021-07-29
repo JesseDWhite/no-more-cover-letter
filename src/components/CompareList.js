@@ -5,7 +5,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import Compare from './Compare';
-import logo from '../img/cover-letter.png';
 
 function CompareList(props) {
   useFirestoreConnect([
@@ -22,7 +21,7 @@ function CompareList(props) {
             <span>
               <img
                 id='new-job-img'
-                src={logo}
+                src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
                 alt='add new job comparison'
               />
             </span>Add New Job Comparison</h4>

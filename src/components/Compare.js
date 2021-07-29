@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
+import logo from '../img/cover-letter.png';
 
 function Compare(props) {
   return (
@@ -17,7 +18,7 @@ function Compare(props) {
           View {props.companyName}
           <img
             className='card-image'
-            src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
+            src={logo}
             alt='memo with tab'
             width='100px'
           />

@@ -69,7 +69,7 @@ function JobComparisonDetails(props) {
   return (
     <>
       <div className='card job-compare-card'>
-        <h2 className='card-title'>{props.jobComparison.companyName}</h2>
+        <h1 className='card-title'><em>{props.jobComparison.companyName}</em></h1>
         <div className='row mt-5'>
           <div className='col-3'>
             <button
