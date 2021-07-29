@@ -1,7 +1,11 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import Compare from './Compare';
+import logo from '../img/cover-letter.png';
 
 function CompareList(props) {
   useFirestoreConnect([
@@ -13,7 +17,17 @@ function CompareList(props) {
   if (isLoaded(jobComparisons)) {
     return (
       <>
-        <button className='btn btn-primary' onClick={() => props.createJobComparison()}>Add New Job Comparison</button>
+        <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
+          <h4>
+            <span>
+              <img
+                id='new-job-img'
+                src={logo}
+                alt='add new job comparison'
+              />
+            </span>Add New Job Comparison</h4>
+        </div>
+
         <div className='row'>
           {jobComparisons.map(jobComparison => (
             <Compare

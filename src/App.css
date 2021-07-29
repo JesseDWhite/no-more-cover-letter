@@ -113,3 +113,22 @@ h1,h2,h3,h4 {
 .card-image {
   margin: 20px;
 }
+
+#new-job {
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  transition: width 1s, height 1s, background-color 1s, color 1s, transform 2s;
+}
+
+#new-job:hover {
+  color: white;
+  background-color: rgba(2, 172, 2, 0.644);
+}
+
+#new-job-img {
+  width: 100px;
+}
