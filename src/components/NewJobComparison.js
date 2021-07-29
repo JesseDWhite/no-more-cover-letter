@@ -23,11 +23,11 @@ function NewJobComparison(props) {
 
   return (
     <>
-      <div className='card'>
+      <div className='card job-compare-card'>
         <form onSubmit={addJobComparisonToFireStore}>
           <div className='row'>
-            <div className='col-8'>
-              <label htmlFor='companyName'>Company Name</label>
+            <div className='col-12'>
+              <h4>Company Name</h4>
               <input
                 className='form-control'
                 type='text'
@@ -37,7 +37,7 @@ function NewJobComparison(props) {
           </div>
           <div className='row'>
             <div className='col-6'>
-              <label htmlFor='coverLetter'>Your Cover Letter</label>
+              <h4>Your Cover Letter</h4>
               <textarea
                 className='form-control'
                 type='text'
@@ -46,7 +46,7 @@ function NewJobComparison(props) {
               />
             </div>
             <div className='col-6'>
-              <label htmlFor='jobPosting'>The Job Posting You Are Applying To</label>
+              <h4>Job Posting You Are Applying To</h4>
               <textarea
                 className='form-control'
                 type='text'
@@ -55,9 +55,15 @@ function NewJobComparison(props) {
               />
             </div>
           </div>
-          <button type='submit' className='btn btn-success'>Submit</button>
+          <div className='row'>
+            <div className='col-6'>
+              <button className='btn btn-primary' onClick={() => props.goBack()}>Go Back</button>
+            </div>
+            <div className='col-6'>
+              <button type='submit' className='btn btn-success'>Submit</button>
+            </div>
+          </div>
         </form>
-        <button onClick={() => props.goBack()}>Go Back</button>
       </div>
     </>
   );
