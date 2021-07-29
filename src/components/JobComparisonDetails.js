@@ -40,7 +40,7 @@ function JobComparisonDetails(props) {
       return (
         <div>
           <div className='score-button'>
-            <button className='btn btn-success' center onClick={() => props.getScore()}>
+            <button className='btn btn-success' onClick={() => props.getScore()}>
               Find Out Your Grade
             </button>
           </div>
@@ -88,7 +88,9 @@ function JobComparisonDetails(props) {
             </button>
           </div>
           <div className='col-3'>
-            <button className='btn btn-dark' onClick={() => props.deleteJobComparison(props.id)}>Delete</button>
+            <button className='btn btn-dark' onClick={() => props.deleteJobComparison(props.jobComparison.id)}>
+              Delete
+            </button>
           </div>
           <div className='col-3'>
             <button className='btn btn-dark' onClick={() => props.editJobComparison()}>Edit</button>

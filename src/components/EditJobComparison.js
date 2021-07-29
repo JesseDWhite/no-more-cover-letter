@@ -9,7 +9,7 @@ function EditJobComparison(props) {
   function handleEditJobComparisonFormSubmission(e) {
     e.preventDefault();
 
-    props.editJobComparison();
+    props.goBack();
 
     const { companyName, coverLetter, jobPosting } = e.target;
 
@@ -37,7 +37,7 @@ function EditJobComparison(props) {
                 className='form-control'
                 type='text'
                 name='companyName'
-                value={jobComparison.companyName}
+                defaultValue={jobComparison.companyName}
               />
             </div>
           </div>
@@ -49,7 +49,7 @@ function EditJobComparison(props) {
                 type='text'
                 name='coverLetter'
                 rows='20'
-                value={jobComparison.coverLetter}
+                defaultValue={jobComparison.coverLetter}
               />
             </div>
             <div className='col-6'>
@@ -59,7 +59,7 @@ function EditJobComparison(props) {
                 type='text'
                 name='jobPosting'
                 rows='20'
-                value={jobComparison.jobPosting}
+                defaultValue={jobComparison.jobPosting}
               />
             </div>
           </div>
