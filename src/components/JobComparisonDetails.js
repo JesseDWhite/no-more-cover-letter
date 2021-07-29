@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../img/cover-letter.png';
 
 function JobComparisonDetails(props) {
   const determineGrade = () => {
@@ -69,6 +70,11 @@ function JobComparisonDetails(props) {
   return (
     <>
       <div className='card job-compare-card'>
+        <img
+          className='details-image'
+          src={logo}
+          alt='memo with tab'
+        />
         <h1 className='card-title'><em>{props.jobComparison.companyName}</em></h1>
         <div className='row mt-5'>
           <div className='col-3'>

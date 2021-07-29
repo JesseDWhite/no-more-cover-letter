@@ -133,3 +133,10 @@ h1,h2,h3,h4 {
 #new-job-img {
   width: 100px;
 }
+
+.details-image {
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}

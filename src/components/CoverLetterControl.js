@@ -130,7 +130,7 @@ class CoverLetterControl extends React.Component {
     }
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
       return (
-        <div className='card'>
+        <div className='card job-compare-card'>
           <Link to='/signin'><h2>You must be signed in to see this content.</h2></Link>
         </div>
       );
