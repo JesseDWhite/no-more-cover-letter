@@ -134,6 +134,7 @@ function JobComparisonDetails(props) {
         </div>
         {displayListOfKeyWords()}
       </div>
+
       {/* <div className='row'>
         <div className='col-6 card'>
           <h3>Cover Letter</h3>
