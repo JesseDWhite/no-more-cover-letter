@@ -32,14 +32,45 @@ _This application was meant to streamline and de-mistify the process of writing 
     * _Optionally, run the command `npm run build` to make a bundle of the files_
     * _Finally, run the command `npm run start` to start a development server_
 ## 🐛 Known Bugs
-* _There are no known bugs._
+* _Plurality of words such as "communicate" and "communicating" are not seen as a match._
 ## ⚖ License
 _MIT © 2021 Jesse White_
 ## 🤳 Contact Information
 Jesse White _jesse.white6@gmail.com_
 
 # Full Project Outlook
-<em>✔ represents goals that have been met so far.</em>
+<em>✔️ represents goals that have been met so far.</em>
+
+<h2> Project Inspiration <img src="https://media.giphy.com/media/YWLDUhxMbpPfY831Fn/giphy.gif" width="60px"></h2>
+
+<p>
+I originally had the idea to make a cover letter generator after writing my third one for a job application. When completing a job application, the applicant will take the job posting and break it down to keywords that then need to be addressed in their cover letter. I then realized that this process was very repetitive and could be automated by an application. While my original plan of generating an entire cover letter did not pan out, I think the final product  is actually more useful for prospective applicants.
+</p>
+
+<h2> Process <img src="https://media.giphy.com/media/3ohhwlYW4evn0r0BXO/giphy.gif" width="80px"></h2>
+
+<p>
+Once I shifted gears, I knew I would need a way to break every word apart and check the value in both the cover letter and the job posting. These words would then be turned into lowercase and all punctuation removed. Once that has been complete, each word is then split into a new array and sorted, so each word has its own index value. The next step passes those arrays into a new Set to remove any and all duplicated words, so you are left with an array of only unique words for both cover letter and job posting. This final step then filters out all words in the job posting that are not listed as a keyword in a variable that I have been feeding hot topic words and then filters the cover letter array against the job posting filtered array. The user is then left with two things: a list of keywords from the job posting that need to be addressed and all the keywords they have already addressed in their cover letter.
+</p>
+
+## Goals
+
+<h3> MVP </h3>
+
+* ✔️ Allow user input for cover letter and job posting.
+* ✔️ List keywords manually from the user for job posting.
+* ✔️ Display currently inputted cover letter and job postings.
+
+<h3> Stretch Goals </h3>
+
+* ✔️ Use authentication through Firebase.
+* ❌ Use authorization through Firebase.
+* ✔️ Automate the process of finding keywords.
+* ✔️ Host the project on Firebase.
+* ❌ Integrate another framework to catch plurality of keywords.
+
+<details>
+  <summary>Click to see the original project scope and process</summary>
 <h3>Project Insipration <img src="https://media.giphy.com/media/QxSRmUeq7RUIHLxADc/giphy.gif" width="60px"> </h3> 
 
 <p>Applying for jobs and writing cover letters that are tailored for each job posting can become a tedious and repeatable process. Many people that have a cover letter already, know the sections that can be altered to fit the needs of a job posting. The rest of the cover letter can largely be left the same. Having done this myself numerous times made me realize that this process could be automated to some capacity. This is where I got the idea to make an application that could help someone write a custom cover letter with minimal input from the user.</p>
@@ -73,6 +104,8 @@ Display final output to users to copy and edit within their own text editor.
 * Application can be tailored to any user.
 * Save general user information like name and address for re-use later.
 * Create a job tracking dashboard for jobs user is actively applying for.
+
+</details>
 
 # Time Logged For Research
 <details>
