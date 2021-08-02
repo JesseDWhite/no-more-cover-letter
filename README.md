@@ -40,7 +40,10 @@ _MIT © 2021 Jesse White_
 Jesse White _jesse.white6@gmail.com_
 
 # Full Project Outlook
+<div align="center">
 <em>✔️ represents goals that have been met so far.</em>
+<em>❌ represents goals that are activly being worked on.</em>
+</div>
 
 <h2> Project Inspiration <img src="https://media.giphy.com/media/YWLDUhxMbpPfY831Fn/giphy.gif" width="60px"></h2>
 
@@ -69,6 +72,7 @@ Once I shifted gears, I knew I would need a way to break every word apart and ch
 * ✔️ Automate the process of finding keywords.
 * ✔️ Host the project on Firebase.
 * ❌ Integrate another framework to catch plurality of keywords.
+* ❌ Integrate Material UI for styleing and layout.
 
 <details>
   <summary>Click to see the original project scope and process</summary>
