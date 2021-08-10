@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useFirestore } from 'react-redux-firebase';
+import firebase from 'firebase/app';
 
 function NewJobComparison(props) {
   const firestore = useFirestore();
@@ -8,7 +9,7 @@ function NewJobComparison(props) {
   function addJobComparisonToFireStore(e) {
     e.preventDefault();
 
-    const { coverLetter, jobPosting, companyName } = e.target;
+    const { coverLetter, jobPosting, companyName, userId } = e.target;
 
     props.goBack();
 
@@ -17,6 +18,7 @@ function NewJobComparison(props) {
         coverLetter: coverLetter.value,
         jobPosting: jobPosting.value,
         companyName: companyName.value,
+        userId: userId.value,
       }
     );
   }
@@ -26,6 +28,12 @@ function NewJobComparison(props) {
       <div className='card job-compare-card'>
         <form onSubmit={addJobComparisonToFireStore}>
           <div className='row'>
+            <input
+              type='text'
+              name='userId'
+              value={firebase.auth().currentUser.uid}
+              hidden
+            />
             <div className='col-12'>
               <h4>Company Name</h4>
               <input

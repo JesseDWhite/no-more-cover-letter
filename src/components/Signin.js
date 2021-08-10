@@ -7,17 +7,21 @@ function Signin() {
     const email = e.target.email.value;
     const password = e.target.password.value;
     firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-      <p>You Successfully Signed Up!</p>;
+      console.log('You have successfully signed up!');
     }).catch(error => {
       console.log(error.message);
     });
   }
+
   function doSignIn(e) {
     e.preventDefault();
     const email = e.target.signinEmail.value;
     const password = e.target.signinPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      <p>You Successfully Signed In!</p>;
+      console.log('You have successfully signed in!');
+      firebase.auth().onAuthStateChanged(user => {
+        console.log(user.uid);
+      });
     }).catch(error => {
       console.log(error.message);
     });
