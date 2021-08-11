@@ -33,6 +33,34 @@ function JobComparisonDetails(props) {
       );
     }
   };
+
+  const progressMessage = () => {
+    const jobKeyWords = props.jobPostingKeyWords;
+    const yourGrade = props.yourPercentage;
+    if (jobKeyWords !== null) {
+      if (yourGrade > 10 && yourGrade < 20) {
+        return (
+          'Covered'
+        );
+      } else if (yourGrade >= 20 && yourGrade < 40) {
+        return (
+          'Of keywords addressed.'
+        );
+      } else if (yourGrade >= 40 && yourGrade < 60) {
+        return (
+          'Of keywords addressed. Keep it up!'
+        );
+      } else if (yourGrade >= 60 && yourGrade <= 80) {
+        return (
+          'Of keywords addressed. You are so close!'
+        );
+      } else if (yourGrade >= 80) {
+        return (
+          'Way to put yourself out there. Get that job!'
+        );
+      }
+    }
+  };
   const displayListOfKeyWords = () => {
     const jobKeyWords = props.jobPostingKeyWords;
     const { coverLetterKeyWords } = props;
@@ -111,7 +139,7 @@ function JobComparisonDetails(props) {
                     aria-valuemax='100'
                     style={{ width: `${props.yourPercentage}%` }}
                   >
-                    <h4 className='mt-2'>{props.yourPercentage}% of keywords addressed. Keep it up!</h4>
+                    <h4 className='mt-2'>{props.yourPercentage}% {progressMessage()}</h4>
                   </div>
                 </div>
               </div>
