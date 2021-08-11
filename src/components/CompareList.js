@@ -46,7 +46,6 @@ function CompareList(props) {
   }
   return (
     <>
-      {firebase.auth().currentUser.uid}
       <h3> Loading All Cover Letters and Job Postings...</h3>
     </>
   );
