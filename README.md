@@ -68,7 +68,7 @@ Once I shifted gears, I knew I would need a way to break every word apart and ch
 <h3> Stretch Goals </h3>
 
 * ✔️ Use authentication through Firebase.
-* ❌ Use authorization through Firebase.
+* ✔️ Use authorization through Firebase.
 * ✔️ Automate the process of finding keywords.
 * ✔️ Host the project on Firebase.
 * ❌ Integrate another framework to catch plurality of keywords.
