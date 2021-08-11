@@ -29,7 +29,7 @@ function Signin() {
 
   function doSignOut() {
     firebase.auth().signOut().then(() => {
-      <p>You Have Been Signed Out</p>;
+      console.log('You have been signed out.');
     }).catch(error => {
       console.log(error.message);
     });

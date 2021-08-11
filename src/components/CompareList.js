@@ -4,6 +4,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
+import firebase from 'firebase/app';
 import Compare from './Compare';
 
 function CompareList(props) {
@@ -14,6 +15,7 @@ function CompareList(props) {
   const jobComparisons = useSelector(state => state.firestore.ordered.jobComparisons);
 
   if (isLoaded(jobComparisons)) {
+    const filteredView = jobComparisons.filter(e => e.userId === firebase.auth().currentUser.uid);
     return (
       <>
         <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
@@ -28,10 +30,11 @@ function CompareList(props) {
         </div>
 
         <div className='row'>
-          {jobComparisons.map(jobComparison => (
+          {filteredView.map(jobComparison => (
             <Compare
               viewJobComparison={props.viewJobComparison}
               companyName={jobComparison.companyName}
+              userId={jobComparison.userId}
               id={jobComparison.id}
               key={jobComparison.id}
             />
@@ -42,7 +45,10 @@ function CompareList(props) {
     );
   }
   return (
-    <h3>Loading All Cover Letters and Job Postings...</h3>
+    <>
+      {firebase.auth().currentUser.uid}
+      <h3> Loading All Cover Letters and Job Postings...</h3>
+    </>
   );
 }
 

@@ -109,6 +109,7 @@ class CoverLetterControl extends React.Component {
         coverLetter: jobComparisons.get('coverLetter'),
         jobPosting: jobComparisons.get('jobPosting'),
         companyName: jobComparisons.get('companyName'),
+        userId: jobComparisons.get('userId'),
         id: jobComparisons.id,
       };
       this.setState({
