@@ -41,12 +41,18 @@ function CompareList(props) {
           ))}
         </div>
       </>
-
     );
   }
   return (
     <>
-      <h3> Loading All Cover Letters and Job Postings...</h3>
+      <button className='btn btn-warning' type='button' disabled>
+        <span
+          className='spinner-grow spinner-grow-sm'
+          role='status'
+          aria-hidden='true'
+        />
+        Loading...
+      </button>
     </>
   );
 }
