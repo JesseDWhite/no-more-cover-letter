@@ -40,23 +40,23 @@ function JobComparisonDetails(props) {
     if (jobKeyWords !== null) {
       if (yourGrade > 10 && yourGrade < 20) {
         return (
-          'Covered'
+          'Covered.'
         );
       } else if (yourGrade >= 20 && yourGrade < 40) {
         return (
-          'Of keywords addressed.'
+          'Of keywords covered.'
         );
       } else if (yourGrade >= 40 && yourGrade < 60) {
         return (
-          'Of keywords addressed. Keep it up!'
+          'Of keywords covered. Keep it up!'
         );
       } else if (yourGrade >= 60 && yourGrade <= 80) {
         return (
-          'Of keywords addressed. You are so close!'
+          'Of keywords covered. You are so close!'
         );
       } else if (yourGrade >= 80) {
         return (
-          'Way to put yourself out there. Get that job!'
+          'Way to put yourself out there. Now rock that interview!'
         );
       }
     }
