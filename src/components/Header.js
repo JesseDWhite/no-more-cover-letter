@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <>
+      <h1>THIS HAS CHANGED</h1>
       <nav className='navbar sticky-top navbar-dark bg-dark'>
         <div className='container-fluid'>
           <Link to='/' className='navbar-brand'>
