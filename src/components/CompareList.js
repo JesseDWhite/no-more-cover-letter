@@ -19,14 +19,12 @@ function CompareList(props) {
     return (
       <>
         <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
-          <h4>
-            <span>
-              <img
-                id='new-job-img'
-                src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
-                alt='add new job comparison'
-              />
-            </span>Add New Job Comparison</h4>
+          <img
+            id='new-job-img'
+            src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
+            alt='add new job comparison'
+          />
+          <h4>Add New Job Comparison</h4>
         </div>
 
         <div className='row'>

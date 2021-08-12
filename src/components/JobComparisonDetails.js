@@ -61,6 +61,7 @@ function JobComparisonDetails(props) {
       }
     }
   };
+
   const displayListOfKeyWords = () => {
     const jobKeyWords = props.jobPostingKeyWords;
     const { coverLetterKeyWords } = props;

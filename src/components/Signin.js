@@ -6,9 +6,9 @@ function Signin() {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-      console.log('You have successfully signed up!');
-    }).catch(error => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() =>
+      console.log('You have successfully signed up!')
+    ).catch(error => {
       console.log(error.message);
     });
   }
@@ -17,11 +17,13 @@ function Signin() {
     e.preventDefault();
     const email = e.target.signinEmail.value;
     const password = e.target.signinPassword.value;
-    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      console.log('You have successfully signed in!');
-    }).catch(error => {
-      console.log(error.message);
-    });
+    return (
+      firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+        console.log('You have successfully signed in!');
+      }).catch(error => {
+        console.log(error.message);
+      })
+    );
   }
 
   function doSignOut() {
@@ -33,17 +35,18 @@ function Signin() {
   }
 
   const isSignedIn = () => {
-    if (firebase.auth().currentUser != null) {
+    if (firebase.auth().currentUser !== null) {
       return (
         <button className='btn btn-danger' onClick={doSignOut}>Sign Out</button>
       );
     }
   };
+
   return (
     <>
       <div className='card job-compare-card'>
         <div className='row'>
-          <div className='col-6 card'>
+          <div className='col-lg-6 card'>
             <h2>Sign Up</h2>
             <form onSubmit={doSignUp}>
               <input
@@ -63,9 +66,7 @@ function Signin() {
               <button className='btn btn-primary' type='submit'>Sign Up</button>
             </form>
           </div>
-        </div>
-        <div className='row'>
-          <div className='col-6 card'>
+          <div className='col-lg-6 card'>
             <h2>Sign In</h2>
             <form onSubmit={doSignIn} className='needs-validation'>
               <input
@@ -84,9 +85,9 @@ function Signin() {
               />
               <button className='btn btn-primary mb-3' type='submit'>Sign In</button>
             </form>
-            {isSignedIn()}
           </div>
         </div>
+        {isSignedIn()}
       </div>
     </>
   );

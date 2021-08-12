@@ -33,6 +33,7 @@ function NewJobComparison(props) {
               name='userId'
               value={firebase.auth().currentUser.uid}
               hidden
+              readOnly
             />
             <div className='col-12'>
               <h4>Company Name</h4>

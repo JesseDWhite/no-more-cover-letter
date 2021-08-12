@@ -67,6 +67,14 @@ h1,h2,h3,h4 {
   cursor: pointer;
 }
 
+.list-card:active {
+  background-color: rgb(252, 65, 65);
+  width: 300px;
+  height: 300px;
+  color: white;
+  cursor: pointer;
+}
+
 .score-card {
   text-align: center;
   font-size: 40px;
@@ -132,8 +140,14 @@ h1,h2,h3,h4 {
   cursor: pointer;
 }
 
+#new-job:active {
+  color: white;
+  background-color: rgb(252, 65, 65);
+  cursor: pointer;
+}
+
 #new-job-img {
-  width: 100px;
+  width: 135px;
 }
 
 .details-image {
@@ -141,4 +155,9 @@ h1,h2,h3,h4 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+}
+
+.btn-dark:hover {
+  background-color: rgb(252, 65, 65);
+  border-color: rgb(252, 65, 65);
 }
