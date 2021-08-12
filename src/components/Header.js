@@ -1,20 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import firebase from 'firebase/app';
 
 function Header() {
-  // const isLoggedIn = () => {
-  //   const loggedInUser = firebase.auth().currentUser;
-  //   if (loggedInUser !== undefined || loggedInUser !== null) {
-  //     return (
-  //       <p>{loggedInUser.email}</p>
-  //     );
-  //   } else if (loggedInUser === undefined || loggedInUser === null) {
-  //     return (
-  //       <p>Sign In</p>
-  //     );
-  //   }
-  // };
   return (
     <>
       <nav className='navbar sticky-top navbar-dark bg-dark'>

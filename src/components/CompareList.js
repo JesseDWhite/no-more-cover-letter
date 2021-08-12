@@ -13,9 +13,9 @@ function CompareList(props) {
   ]);
 
   const jobComparisons = useSelector(state => state.firestore.ordered.jobComparisons);
-  const filteredView = jobComparisons.filter(e => e.userId === firebase.auth().currentUser.uid);
 
-  if (Object.keys(filteredView).length === 0) {
+  if (isLoaded(jobComparisons) && Object.keys(jobComparisons
+    .filter(e => e.userId === firebase.auth().currentUser.uid)).length === 0) {
     return (
       <>
         <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
@@ -36,6 +36,7 @@ function CompareList(props) {
       </>
     );
   } else if (isLoaded(jobComparisons)) {
+    const filteredView = jobComparisons.filter(e => e.userId === firebase.auth().currentUser.uid);
     return (
       <>
         <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
