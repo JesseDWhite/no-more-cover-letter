@@ -11,7 +11,7 @@ function Header() {
             No More Cover Letter</Link>
           <span className='navbar-text'>
             <Link to='/signin'>
-              Account
+              <button className='btn btn-outline-warning btn-sm'>Account</button>
             </Link>
           </span>
         </div>
