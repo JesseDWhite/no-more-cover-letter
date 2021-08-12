@@ -4,13 +4,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-import { Link } from 'react-router-dom';
 import NewJobComparison from './NewJobComparison';
 import * as a from '../actions/index';
 import * as c from '../actions/ActionTypes';
 import CompareList from './CompareList';
 import JobComparisonDetails from './JobComparisonDetails';
 import EditJobComparison from './EditJobComparison';
+import Homgepage from './Homepage';
 
 class CoverLetterControl extends React.Component {
   constructor(props) {
@@ -130,7 +130,7 @@ class CoverLetterControl extends React.Component {
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
       return (
         <div className='card job-compare-card'>
-          <Link to='/signin'><h2>You must be signed in to see this content.</h2></Link>
+          <Homgepage />
         </div>
       );
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
