@@ -13,9 +13,23 @@ function CompareList(props) {
   ]);
 
   const jobComparisons = useSelector(state => state.firestore.ordered.jobComparisons);
+  const filteredView = jobComparisons.filter(e => e.userId === firebase.auth().currentUser.uid);
 
-  if (isLoaded(jobComparisons)) {
-    const filteredView = jobComparisons.filter(e => e.userId === firebase.auth().currentUser.uid);
+  if (Object.keys(filteredView).length === 0) {
+    return (
+      <>
+        <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
+          <img
+            id='new-job-img'
+            src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
+            alt='add new job comparison'
+          />
+          <h4>Add New Job Comparison</h4>
+        </div>
+        <h2>Add a new job comparison above to get started!</h2>
+      </>
+    );
+  } else if (isLoaded(jobComparisons)) {
     return (
       <>
         <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
