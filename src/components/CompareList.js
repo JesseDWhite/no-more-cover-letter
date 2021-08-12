@@ -24,7 +24,6 @@ function CompareList(props) {
             src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
             alt='add new job comparison'
           />
-          <h4>Add New Job Comparison</h4>
         </div>
         <img
           id='pointer'
@@ -32,7 +31,7 @@ function CompareList(props) {
           alt='arrow pointing up'
         />
         <h2 id='welcome-message'><em>It doesn't look like you have any submissions yet.
-          Add one above and get started.</em></h2>
+          Add one above to get started.</em></h2>
       </>
     );
   } else if (isLoaded(jobComparisons)) {
@@ -45,7 +44,6 @@ function CompareList(props) {
             src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
             alt='add new job comparison'
           />
-          <h4>Add New Job Comparison</h4>
         </div>
 
         <div className='row'>
