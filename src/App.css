@@ -113,6 +113,16 @@ h1,h2,h3,h4, h5 {
   box-shadow: 15px 10px 8px #0000001c;
 }
 
+.homepage-card {
+  background-color: rgba(187, 187, 187, 0.26);
+  border-radius: 25px;
+  padding: 50px;
+  width: 1000px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 15px 10px 8px #0000001c;
+}
+
 .score-button {
   width: 300px;
   margin-right: auto;
@@ -171,4 +181,8 @@ h1,h2,h3,h4, h5 {
 
 #welcome-message {
   color: white;
+}
+
+.form-instruction {
+  text-align: center;
 }

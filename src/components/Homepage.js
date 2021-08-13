@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Homgepage() {
   return (
@@ -6,9 +7,9 @@ function Homgepage() {
       <h1>Welcome to No More Cover Letter</h1>
       <h5><em>~ our goal is to demystify the process of writing a cover letter ~</em></h5>
       <div className='row'>
-        <div className='col-6'>
-          <div className='card keyword-card'>
-            <h3>Info on witing a good cover letter</h3>
+        <div className='col-12'>
+          <div className='card homepage-card'>
+            <h3>How to write a good cover letter</h3>
             <p>
               A good cover letter and resume will make it easy to see how your skills and
               experience match an employer's job description.
@@ -29,8 +30,10 @@ function Homgepage() {
             </p>
           </div>
         </div>
-        <div className='col-6'>
-          <div className='card keyword-card'>
+      </div>
+      <div className='row'>
+        <div className='col-12'>
+          <div className='card homepage-card'>
             <h3>How it works</h3>
             <p>Once you have made an account, you will be able to submit your first job posting that you want to apply for.
               It's okay if you don't have a cover letter for it yet, we will help you start one!
@@ -38,8 +41,10 @@ function Homgepage() {
             <p>
               Once you have uploaded <em>ALL</em> text from the job posting,
               you will be able to hit compare and get a list of
-              "power words" that you will want to address in your cover letter.
+              "power words" that you will want to address in your cover letter. These power words are common for
+              programming positions as well as general soft skills that recruiters are looking for.
             </p>
+            <Link to='/signin'><button className='btn btn-warning'>create an account</button></Link>
           </div>
         </div>
       </div>

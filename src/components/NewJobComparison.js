@@ -47,6 +47,7 @@ function NewJobComparison(props) {
           <div className='row'>
             <div className='col-6'>
               <h4>Your Cover Letter</h4>
+              <em className='form-instruction'>Go ahead and paste all of the text from your cover letter in this field.</em>
               <textarea
                 className='form-control'
                 type='text'
@@ -56,6 +57,7 @@ function NewJobComparison(props) {
             </div>
             <div className='col-6'>
               <h4>Job Posting You Are Applying To</h4>
+              <em className='form-instruction'>Now paste all of the text from the job posting you are applying to here.</em>
               <textarea
                 className='form-control'
                 type='text'
