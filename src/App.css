@@ -3,10 +3,12 @@ body {
   background-attachment: fixed;
   height: 100%;
   margin-bottom: 50px;
+  font-family: 'Nunito', sans-serif;;
 }
 
 h1,h2,h3,h4, h5 {
   text-align: center;
+  font-weight: 600;
 }
 
 .card {
@@ -185,4 +187,27 @@ h1,h2,h3,h4, h5 {
 
 .form-instruction {
   text-align: center;
+}
+
+#banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+#welcome {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+#quote {
+  position: absolute;
+  top: 280px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
