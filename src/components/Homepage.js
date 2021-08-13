@@ -26,7 +26,7 @@ function Homgepage() {
               writing as if they do will help you concisely convey why you’re qualified
               when a real person is sitting in front of your application.
               That's why you should always strive to use the most important words and
-              phrases from the job description—verbatim—in your cover letter and resume.
+              phrases from the job description—verbatim—in your cover letter.
             </p>
             <p>
               So before we even start writing our cover letter and resume,

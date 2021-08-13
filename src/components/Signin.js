@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import { Link } from 'react-router-dom';
 
 function Signin() {
   function doSignUp(e) {
@@ -37,7 +38,9 @@ function Signin() {
   const isSignedIn = () => {
     if (firebase.auth().currentUser !== null) {
       return (
-        <button className='btn btn-danger' onClick={doSignOut}>Sign Out</button>
+        <div>
+          <button className='btn btn-danger btn-sm' onClick={doSignOut} id='signout-button'>Sign Out</button>
+        </div>
       );
     }
   };
@@ -46,6 +49,8 @@ function Signin() {
     <>
       <div className='card job-compare-card'>
         <div className='row'>
+          {isSignedIn()}
+          <Link to='/'><button className='btn btn-dark btn-sm' id='home-button'>Home</button></Link>
           <div className='col-lg-6 card'>
             <h2>Sign Up</h2>
             <form onSubmit={doSignUp}>
@@ -87,7 +92,6 @@ function Signin() {
             </form>
           </div>
         </div>
-        {isSignedIn()}
       </div>
     </>
   );
