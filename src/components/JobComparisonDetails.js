@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../img/cover-letter.png';
+// import logo from '../img/cover-letter.png';
+import Banner from '../img/abstract-paper.jpg';
 
 function JobComparisonDetails(props) {
   const determineGrade = () => {
@@ -98,13 +99,10 @@ function JobComparisonDetails(props) {
 
   return (
     <>
+      <img id='banner' src={Banner} className='img-fluid' alt='colored paper close up' />
+      <h1 id='welcome'>{props.jobComparison.companyName}</h1>
+      <h5 id='quote'><em>Lets see how your cover letter compares</em></h5>
       <div className='card job-compare-card'>
-        <img
-          className='details-image'
-          src={logo}
-          alt='memo with tab'
-        />
-        <h1 className='card-title'><em>{props.jobComparison.companyName}</em></h1>
         <div className='row mt-5'>
           <div className='col-3'>
             <button
