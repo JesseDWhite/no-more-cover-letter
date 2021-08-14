@@ -124,14 +124,12 @@ class CoverLetterControl extends React.Component {
     const auth = this.props.firebase.auth();
     if (!isLoaded(auth)) {
       return (
-        <h1>Loading...</h1>
+        <h2>Loading...</h2>
       );
     }
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
       return (
-        <div className='card job-compare-card'>
-          <Homgepage />
-        </div>
+        <Homgepage />
       );
     } if ((isLoaded(auth)) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;

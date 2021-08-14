@@ -8,7 +8,7 @@ function Compare(props) {
     <>
       <div className='main-list'>
         <div
-          className='card col-12 list-card'
+          className='card col-3 list-card'
           onClick={() => props.viewJobComparison(
             props.id,
             props.coverLetter,

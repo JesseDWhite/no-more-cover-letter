@@ -46,16 +46,18 @@ function CompareList(props) {
           />
         </div>
 
-        <div className='row'>
-          {filteredView.map(jobComparison => (
-            <Compare
-              viewJobComparison={props.viewJobComparison}
-              companyName={jobComparison.companyName}
-              userId={jobComparison.userId}
-              id={jobComparison.id}
-              key={jobComparison.id}
-            />
-          ))}
+        <div className='container'>
+          <div className='row'>
+            {filteredView.map(jobComparison => (
+              <Compare
+                viewJobComparison={props.viewJobComparison}
+                companyName={jobComparison.companyName}
+                userId={jobComparison.userId}
+                id={jobComparison.id}
+                key={jobComparison.id}
+              />
+            ))}
+          </div>
         </div>
       </>
     );
