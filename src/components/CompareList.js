@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import firebase from 'firebase/app';
 import Compare from './Compare';
+import Banner from '../img/abstract-paper.jpg';
 
 function CompareList(props) {
   useFirestoreConnect([
@@ -18,13 +19,14 @@ function CompareList(props) {
     .filter(e => e.userId === firebase.auth().currentUser.uid)).length === 0) {
     return (
       <>
-        <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
+        <h1 id='welcome'><div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
           <img
             id='new-job-img'
             src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
             alt='add new job comparison'
           />
-        </div>
+        </div></h1>
+        <img id='banner' src={Banner} className='img-fluid' alt='colored paper close up' />
         <img
           id='pointer'
           src='https://media.giphy.com/media/8AjuQiq6219oFbwk41/giphy.gif'
@@ -38,13 +40,16 @@ function CompareList(props) {
     const filteredView = jobComparisons.filter(e => e.userId === firebase.auth().currentUser.uid);
     return (
       <>
-        <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
-          <img
-            id='new-job-img'
-            src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
-            alt='add new job comparison'
-          />
-        </div>
+        <h1 id='welcome'>
+          <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
+            <img
+              id='new-job-img'
+              src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
+              alt='add new job comparison'
+            />
+          </div>
+        </h1>
+        <img id='banner' src={Banner} className='img-fluid' alt='colored paper close up' />
 
         {/* <div className='container'> */}
         <div className='row'>

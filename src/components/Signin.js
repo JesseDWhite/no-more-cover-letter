@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import { Link } from 'react-router-dom';
+import Banner from '../img/abstract-paper.jpg';
 
 function Signin() {
   function doSignUp(e) {
@@ -47,6 +48,9 @@ function Signin() {
 
   return (
     <>
+      <img id='banner' src={Banner} className='img-fluid' alt='colored paper close up' />
+      <h1 id='welcome'>Your Account</h1>
+      <h5 id='quote'><em>~ our goal is to demystify the process of writing a cover letter ~</em></h5>
       <div className='card job-compare-card'>
         <div className='row'>
           {isSignedIn()}
