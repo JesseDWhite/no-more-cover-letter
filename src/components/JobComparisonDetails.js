@@ -53,7 +53,7 @@ function JobComparisonDetails(props) {
         );
       } else if (yourGrade >= 60 && yourGrade <= 80) {
         return (
-          'Of keywords covered. You are so close!'
+          'Of keywords covered. You are so close keep going!'
         );
       } else if (yourGrade >= 80) {
         return (
@@ -64,9 +64,9 @@ function JobComparisonDetails(props) {
   };
 
   const displayListOfKeyWords = () => {
-    const jobKeyWords = props.jobPostingKeyWords;
+    const { jobPostingKeyWords } = props;
     const { coverLetterKeyWords } = props;
-    if (jobKeyWords !== undefined) {
+    if (jobPostingKeyWords !== undefined) {
       return (
         <div>
           <div className='score-button'>
@@ -86,7 +86,7 @@ function JobComparisonDetails(props) {
             <div className='col-6 card keyword-card'>
               <h4>Keywords We Found in this Job Posting</h4>
               <ul>
-                {jobKeyWords.map(keyWord => (
+                {jobPostingKeyWords.map(keyWord => (
                   <li key={keyWord}>{keyWord}</li>
                 ))}
               </ul>
