@@ -51,7 +51,6 @@ function CompareList(props) {
         </h1>
         <img id='banner' src={Banner} className='img-fluid' alt='colored paper close up' />
 
-        {/* <div className='container'> */}
         <div className='row'>
           {filteredView.map(jobComparison => (
             <Compare
@@ -63,12 +62,20 @@ function CompareList(props) {
             />
           ))}
         </div>
-        {/* </div> */}
       </>
     );
   }
   return (
     <>
+      <h1 id='welcome'>
+        <div id='new-job' className='card keyword-card' onClick={() => props.createJobComparison()}>
+          <img
+            id='new-job-img'
+            src='https://media.giphy.com/media/sI4jSKNopYOVnXGhcM/giphy.gif'
+            alt='add new job comparison'
+          />
+        </div>
+      </h1>
       <button className='btn btn-warning' type='button' disabled>
         <span
           className='spinner-grow spinner-grow-sm'

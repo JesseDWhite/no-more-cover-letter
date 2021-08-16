@@ -73,8 +73,8 @@ Once I shifted gears, I knew I would need a way to break every word apart and ch
 * ✔️ Automate the process of finding keywords.
 * ✔️ Host the project on Firebase.
 * ❌ Integrate another framework to catch plurality of keywords.
-* ❌ Integrate Material UI for styleing and layout.
-* 🚧 Create splash-page for before users log in.
+* 🚧 Integrate Material UI for styleing and layout.
+* ✔️ Create splash-page for before users log in.
 
 <details>
   <summary>Click to see the original project scope and process</summary>

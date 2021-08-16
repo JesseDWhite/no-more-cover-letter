@@ -6,17 +6,19 @@ import Signin from './Signin';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path='/signin'>
-          <Signin />
-        </Route>
-        <Route path='/'>
-          <CoverLetterControl />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path='/signin'>
+            <Signin />
+          </Route>
+          <Route path='/'>
+            <CoverLetterControl />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
