@@ -104,7 +104,7 @@ function JobComparisonDetails(props) {
       <h5 id='quote'><em>Lets see how your cover letter compares</em></h5>
       <div className='card job-compare-card'>
         <div className='row mt-5'>
-          <div className='col-3'>
+          <div className='col-md-3'>
             <button
               className='btn btn-dark'
               onClick={() => props.extractKeywords(
@@ -114,15 +114,15 @@ function JobComparisonDetails(props) {
               Compare
             </button>
           </div>
-          <div className='col-3'>
+          <div className='col-md-3'>
             <button className='btn btn-dark' onClick={() => props.deleteJobComparison(props.jobComparison.id)}>
               Delete
             </button>
           </div>
-          <div className='col-3'>
+          <div className='col-md-3'>
             <button className='btn btn-dark' onClick={() => props.editJobComparison()}>Edit</button>
           </div>
-          <div className='col-3'>
+          <div className='col-md-3'>
             <button className='btn btn-dark' onClick={() => props.goBack()}>Go Back</button>
           </div>
           <div className='card mt-3'>
@@ -146,7 +146,7 @@ function JobComparisonDetails(props) {
           </div>
         </div>
         <div className='row score-card mb-5'>
-          <div className='col-6'>
+          <div className='col-lg-6'>
             <div className='card score-view'>
               <div className='card-body'>
                 <h4 className='card-title'>Keywords That Match</h4>
@@ -156,7 +156,7 @@ function JobComparisonDetails(props) {
               </div>
             </div>
           </div>
-          <div className='col-6'>
+          <div className='col-lg-6'>
             <div className='card score-view'>
               <div className='card-body'>
                 <h4 className='card-title'>Your Grade</h4>
